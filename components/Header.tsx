@@ -49,10 +49,10 @@ function Header() {
 
         {/* items */}
         <ul className="m-0 flex list-none p-0">
-          {items.map((item, index) => (
+          {items.map((item, i) => (
             <ScrollIntoView
               selector={`#${item.text.toLocaleLowerCase()}`}
-              key={index}
+              key={i}
             >
               <HeaderItem
                 text={item.text}

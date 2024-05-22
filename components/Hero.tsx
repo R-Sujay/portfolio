@@ -8,7 +8,7 @@ import { useSetRecoilState } from "recoil";
 import { selectedAtom } from "@/atoms/HeaderItem";
 import AnimateText from "./AnimateText";
 
-function Hero() {
+function Hero(data: Data) {
   const placeholderText = [
     { type: "heading1", text: "Sujay Rajesh", style: "text-6xl font-semibold" },
   ];
@@ -35,6 +35,7 @@ function Hero() {
       },
     },
   };
+  console.log(data[0].desc);
 
   return (
     <main className="container flex items-center" id="about" ref={ref}>
