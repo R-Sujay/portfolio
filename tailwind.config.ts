@@ -1,7 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
@@ -94,7 +99,6 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         spinBounce: "1.5s spinBounce ease 0s infinite",
         heroImage: "1.5s heroImage ease",
-        marquee: "scroll 7s linear 0s infinite",
       },
     },
   },

@@ -77,6 +77,9 @@
   .marquee-child {
     @apply relative mx-5 h-[180px];
   }
+  .container {
+    @apply mx-auto mt-[13vh] h-[87vh] max-w-7xl snap-end snap-always;
+  }
   .hero_imageBorder {
     @apply absolute rounded-full border dark:border-slate-600;
   }

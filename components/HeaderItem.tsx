@@ -9,7 +9,7 @@ interface Props {
 
 function HeaderItem({ text, isSelected, onClick }: Props) {
   return (
-    <li className="m-5 relative cursor-pointer flex-shrink-0 flex h-1 items-center justify-center lg:h-3" onClick={onClick}>
+    <li className="m-5 relative cursor-pointer flex-shrink-0 flex h-1 items-center justify-center lg:h-3 rounded-2xl" onClick={onClick}>
       <h1 className="z-50 text-lg font-semibold text-indigo-600 transition-colors">{text}</h1>
       {isSelected && (
         <motion.div
