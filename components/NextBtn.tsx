@@ -13,7 +13,9 @@ function NextBtn() {
 
   useEffect(() => {
     const nextSection = selected + 1;
-    const searchResults = items.filter((item) => item.id?.toString().startsWith(nextSection.toPrecision()));
+    const searchResults = items.filter((item) =>
+      item.id?.toString().startsWith(nextSection.toPrecision()),
+    );
 
     if (selected === lastArrayIndex) {
       setNextSelectedItem(items[0]);
@@ -26,11 +28,21 @@ function NextBtn() {
     setSelected(nextSelectedItem.id);
   };
 
+  console.log(nextSelectedItem?.text.toLocaleLowerCase());
+
   return (
-    <ScrollIntoView onClick={item} selector={`#${nextSelectedItem?.text.toLocaleLowerCase()}`} className="fixed top-[85%] right-[50%] left-[50%] z-50 animate-spinBounce delay-700">
-      <a className="slide-btn">
-        <span className={`left-arm ${selected === lastArrayIndex ? "top-left-arm" : ""}`} />
-        <span className={`right-arm ${selected === lastArrayIndex ? "top-right-arm" : ""}`} />
+    <ScrollIntoView
+      onClick={item}
+      selector={`#${nextSelectedItem?.text.toLocaleLowerCase()}`}
+      className="fixed left-[50%] right-[50%] top-[85%] z-50 animate-spinBounce delay-700"
+    >
+      <a className="slide-btn group h-10 w-10">
+        <span
+          className={`left-arm ${selected === lastArrayIndex ? "top-left-arm" : ""}`}
+        />
+        <span
+          className={`right-arm ${selected === lastArrayIndex ? "top-right-arm" : ""}`}
+        />
         <span className="slide-main" />
       </a>
     </ScrollIntoView>

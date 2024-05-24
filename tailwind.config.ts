@@ -10,6 +10,7 @@ module.exports = {
   theme: {
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
+      code: ["SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "monospace"],
     },
     container: {
       center: true,

@@ -9,13 +9,20 @@ import { useInView } from "framer-motion";
 import { selectedAtom } from "@/atoms/HeaderItem";
 import { useTheme } from "next-themes";
 import { lineWobble } from "ldrs";
+import { SkillType } from "@/typings";
+import { urlForImage } from "@/sanity/lib/image";
 
-function Skills() {
+interface Props {
+  skills: SkillType;
+}
+
+function Skills({ skills }: Props) {
   const { theme } = useTheme();
   const dark = theme === "dark";
   const ref = useRef(null);
   const isInView = useInView(ref);
   const setSelected = useSetRecoilState(selectedAtom);
+  const skillArr = splitArray();
 
   useEffect(() => {
     if (isInView) {
@@ -28,6 +35,16 @@ function Skills() {
       lineWobble.register();
     })();
   }, []);
+
+  function splitArray() {
+    const midIndex = Math.ceil(skills.length / 2);
+    const firstHalf = skills.slice(0, midIndex);
+    const secondHalf = skills.slice(midIndex);
+    console.log(firstHalf);
+    console.log(secondHalf);
+
+    return [firstHalf, secondHalf];
+  }
 
   return (
     <div
@@ -52,103 +69,24 @@ function Skills() {
           </h1>
         </div>
       </div>
+
       <div className="relative w-[70%] space-y-5 overflow-x-hidden">
-        <Marquee speed={100} gradient={false}>
-          <div className="marquee-child ml-16 w-[200px]">
-            <Image
-              src="/images/react-logo.svg"
-              alt=""
-              className="object-contain"
-              fill={true}
-            />
-          </div>
-          <div className="marquee-child w-[260px]">
-            <Image
-              src={
-                dark
-                  ? "https://i.imgur.com/wysQfXf.png"
-                  : "https://i.imgur.com/rWgjocu.png"
-              }
-              alt=""
-              className="object-contain"
-              fill={true}
-            />
-          </div>
-          <div className="marquee-child w-[450px]">
-            <Image
-              src={
-                dark
-                  ? "https://i.imgur.com/qSt48Yv.png"
-                  : "https://i.imgur.com/1nfK7JV.png"
-              }
-              alt=""
-              className="object-contain"
-              fill={true}
-            />
-          </div>
-          <div className="marquee-child w-[260px]">
-            <Image
-              src={
-                dark
-                  ? "https://i.imgur.com/V3epEzx.png"
-                  : "https://i.imgur.com/2OqpKrp.png"
-              }
-              alt=""
-              className="object-contain"
-              fill={true}
-            />
-          </div>
-          <div className="marquee-child w-[180px]">
-            <Image
-              src="https://i.imgur.com/9GVeRuW.png"
-              alt=""
-              className="object-contain"
-              fill={true}
-            />
-          </div>
-        </Marquee>
-        <Marquee speed={100} gradient={false}>
-          <div className="marquee-child ml-16 w-[300px]">
-            <Image
-              src={
-                dark
-                  ? "https://i.imgur.com/i03USQx.png"
-                  : "https://i.imgur.com/nRzi3j8.png"
-              }
-              alt=""
-              className="object-contain"
-              fill={true}
-            />
-          </div>
-          <div className="marquee-child w-[330px]">
-            <Image
-              src="https://i.imgur.com/g99BKhf.png"
-              alt=""
-              className="object-contain"
-              fill={true}
-            />
-          </div>
-          <div className="marquee-child w-[300px]">
-            <Image
-              src="https://i.imgur.com/XQoY6xp.png"
-              alt=""
-              className="object-contain"
-              fill={true}
-            />
-          </div>
-          <div className="marquee-child w-[300px]">
-            <Image
-              src={
-                dark
-                  ? "/images/firebase-light.svg"
-                  : "/images/firebase-dark.svg"
-              }
-              alt=""
-              className="object-contain"
-              fill={true}
-            />
-          </div>
-        </Marquee>
+        {skillArr.map((arr, i) => (
+          <Marquee speed={100} gradient={false} className="pl-16" key={i}>
+            {arr.map((skill) => (
+              <div className="marquee-child w-[260px]" key={skill._id}>
+                <Image
+                  src={urlForImage(
+                    skill.dark !== null && dark ? skill.dark : skill.light,
+                  )}
+                  alt=""
+                  className="object-contain"
+                  fill={true}
+                />
+              </div>
+            ))}
+          </Marquee>
+        ))}
       </div>
     </div>
   );

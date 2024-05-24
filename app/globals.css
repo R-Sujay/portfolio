@@ -86,10 +86,13 @@
   .hero_iconBtn {
     @apply !flex items-center justify-center rounded-full text-indigo-500;
   }
-  .font-code {
-    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  .slide-btn {
+    @apply relative block cursor-pointer overflow-hidden border border-indigo-500 transition-all duration-500;
   }
-  .projectImage::before {
-    animation-duration: 5s !important;
+  .slide-main {
+    @apply absolute -top-full left-0 z-0 block h-full w-[103%] bg-indigo-500  group-hover:translate-y-[200%] group-hover:duration-300 group-hover:ease-in-out dark:bg-indigo-700;
+  }
+  .nextBtn-arm {
+    @apply absolute top-[19px] z-10 block w-5 rounded-sm bg-transparent duration-1000 ease-in-out after:-z-10 after:block after:h-px after:w-5 after:origin-[left_center] after:bg-indigo-500 after:transition-all after:duration-500;
   }
 }

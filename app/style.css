@@ -1,27 +1,10 @@
-/* down Button */
-.slide-btn {
-  height: 40px;
-  width: 40px;
-  display: block;
-  border: 1px solid rgb(99 102 241);
-  position: relative;
-  cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);
-  overflow: hidden;
+.slide-btn:hover .left-arm:after {
+  transform: rotate(-10deg);
 }
-.slide-main {
-  left: 0;
-  top: -100%;
-  width: 103%;
-  height: 100%;
-  background: rgb(99 102 241);
-  position: absolute;
-  display: block;
-  z-index: 0;
+.slide-btn:hover .right-arm:after {
+  transform: rotate(10deg);
 }
-.dark .slide-main {
-  background: rgb(67 56 202);
-}
+
 .left-arm {
   position: absolute;
   z-index: 1;
@@ -29,11 +12,7 @@
   top: 19px;
   left: 3px;
   width: 20px;
-  display: block;
   transform: rotate(45deg);
-  -webkit-transition: -webkit-transform 0.8s ease-in-out;
-  -ms-transition: -ms-transform 0.8s ease-in-out;
-  transition: transform 0.8s ease-in-out;
 }
 .top-left-arm {
   transform: rotate(-45deg) !important;
@@ -56,12 +35,8 @@
   top: 19px;
   left: 17px;
   width: 20px;
-  display: block;
   transform: rotate(-45deg);
   border-radius: 2px;
-  -webkit-transition: -webkit-transform 0.8s ease-in-out;
-  -ms-transition: -ms-transform 0.8s ease-in-out;
-  transition: transform 0.8s ease-in-out;
 }
 .top-right-arm {
   transform: rotate(45deg) !important;
@@ -77,18 +52,3 @@
   transform-origin: left center;
   z-index: -1;
 }
-.slide-btn:hover {
-  transition: all 0.1s;
-}
-.slide-btn:hover .left-arm:after {
-  transform: rotate(-10deg);
-}
-.slide-btn:hover .right-arm:after {
-  transform: rotate(10deg);
-}
-.slide-btn:hover .slide-main {
-  transition: all 0.4s ease-in-out;
-  transform: translateY(200%);
-}
-
-/* down Button */

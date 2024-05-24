@@ -32,7 +32,7 @@ export default defineConfig({
             ),
 
             // Regular document types
-            S.documentTypeListItem("post").title("Blog Posts"),
+            S.documentTypeListItem("skills").title("Skills"),
             S.documentTypeListItem("author").title("Authors"),
           ]),
     }),
