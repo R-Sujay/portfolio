@@ -1,13 +1,30 @@
 "use client";
 
-import Image from "next/image";
 import React, { useRef, useEffect } from "react";
-import airbnb from "../public/images/airbnb.png";
-import { FaArrowUpRightFromSquare } from "react-icons/fa6";
-import { FiGithub } from "react-icons/fi";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import { useRecoilState } from "recoil";
 import { selectedAtom } from "@/atoms/HeaderItem";
+import { MdPhonelink } from "react-icons/md";
+import { HiSquaresPlus } from "react-icons/hi2";
+import { RiDashboardHorizontalFill } from "react-icons/ri";
+
+const data = [
+  {
+    Icon: <HiSquaresPlus className="h-[75px] w-[75px]" />,
+    title: "Mobile App Design",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui.",
+  },
+  {
+    Icon: <MdPhonelink className="h-[73px] w-[85px] pl-3" />,
+    title: "Responsive Web Website",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui.",
+  },
+  {
+    Icon: <RiDashboardHorizontalFill className="h-[75px] w-[75px]" />,
+    title: "Dashboard Design",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui.",
+  },
+];
 
 function Experience() {
   const ref = useRef(null);
@@ -22,59 +39,42 @@ function Experience() {
 
   return (
     <div
-      className="container flex items-center justify-between"
+      className="container flex items-center justify-between bg-indigo-100/40 px-0 dark:bg-[#19223c]"
       ref={ref}
       id="experience"
     >
-      <div className="flex items-start justify-between">
-        <div className="relative flex h-[395px] flex-1 flex-col items-start  justify-between py-10">
-          <div className="pl-14">
-            <h1 className="text-4xl font-semibold text-indigo-600">
-              Experience
-            </h1>
-          </div>
-          <motion.div
-            className="absolute left-14 top-28 z-50 h-40 w-full overflow-hidden rounded-lg bg-stone-100 py-5 pl-7 pr-4 text-gray-400 dark:bg-[#19223c]"
-            initial={{ width: 0 }}
-            whileInView={{ width: "100%" }}
-            transition={{
-              duration: 1.5,
-            }}
-            viewport={{ once: true }}
-          >
-            <p className="line-clamp-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rem
-              iste sit reiciendis tenetur culpa reprehenderit id ipsam sed
-              tempora soluta ad, qui numquam maiores quo, quam consequuntur
-              blanditiis voluptas ut, a consequatur deserunt laboriosam sapiente
-              nemo? Id asperiores ex deserunt laboriosam vero repellat rerum
-              dolorum similique enim consequatur consequuntur quidem doloribus,
-              omnis perferendis tenetur aliquid! Molestias praesentium ut
-              sapiente dicta repellendus quis rem expedita, eius quaerat culpa?
-              Fugiat ratione aperiam blanditiis, animi deserunt totam.
-            </p>
-          </motion.div>
-          <div className="pl-14">
-            <div className="flex space-x-4 font-code text-gray-600 dark:text-gray-400">
-              <h1>Next.js</h1>
-              <h1>React</h1>
-              <h1>Tailwind CSS</h1>
-              <h1>Calendar Picker</h1>
-              <h1>Mapbox</h1>
-            </div>
-            <div className="flex items-center space-x-5 pt-2 text-gray-600 dark:text-gray-200">
-              <FaArrowUpRightFromSquare className="h-5 w-5 cursor-pointer" />
-            </div>
-          </div>
-        </div>
-        <div className="relative h-96 w-full flex-1 opacity-80 dark:opacity-75 ">
-          <Image
-            src={airbnb}
-            alt=""
-            fill={true}
-            className="rounded-xl object-cover"
+      <div className="relative flex h-[50%] w-[35%] items-center justify-end rounded-r-full bg-white pr-2 shadow-lg dark:bg-[#13192d]">
+        <div className="rotate-90">
+          <l-line-wobble
+            size="100"
+            stroke="5"
+            bg-opacity="0.1"
+            speed="1.75"
+            color="rgb(99 102 241)"
           />
         </div>
+        <div className="text-4xl font-bold">
+          <h1 className="text-gray-500">
+            Top <span className="text-indigo-500">Services</span>
+          </h1>
+          <h1 className="mt-3 w-[60%] text-sm font-normal text-gray-400">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          </h1>
+        </div>
+      </div>
+
+      <div className="relative mx-5 flex h-[50%] flex-1 items-center justify-center space-x-5">
+        {data.map((item) => (
+          <div className="h-full flex-1 rounded-3xl bg-white px-5 py-3 text-[#313e64] dark:bg-[#13192d]">
+            {item.Icon}
+            <div className="px-3">
+              <h1 className="font-code text-[26px] tracking-widest text-gray-100">
+                {item.title}
+              </h1>
+              <p className="mt-2 text-sm text-gray-400">{item.desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

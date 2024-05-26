@@ -14,11 +14,8 @@ export default async function Home() {
       <Header />
       <Hero hero={hero} />
       <Skills skills={skills} />
-
       <Experience />
-
       <Projects />
-
       <NextBtn />
     </main>
   );

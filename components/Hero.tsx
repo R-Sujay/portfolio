@@ -6,7 +6,7 @@ import { motion, useInView } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { useSetRecoilState } from "recoil";
 import { selectedAtom } from "@/atoms/HeaderItem";
-import AnimateText from "./AnimateText";
+import AnimateText from "@/components/AnimateText";
 import { urlForImage } from "@/sanity/lib/image";
 import { HeroType } from "@/typings";
 

@@ -4,12 +4,12 @@ import React, { useEffect, useState } from "react";
 import { HiAcademicCap } from "react-icons/hi";
 import { useRecoilState } from "recoil";
 import { AnimateSharedLayout } from "framer-motion";
-import HeaderItem from "./HeaderItem";
 import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
 import ScrollIntoView from "react-scroll-into-view";
 import items from "@/HeaderItemsData";
 import { useTheme } from "next-themes";
 import { selectedAtom } from "@/atoms/HeaderItem";
+import HeaderItem from "./HeaderItem";
 
 function Header() {
   const [selected, setSelected] = useRecoilState(selectedAtom);

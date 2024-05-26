@@ -30,7 +30,7 @@ function Projects() {
             <h1 className="text-4xl font-semibold text-indigo-600">Airbnb</h1>
           </div>
           <motion.div
-            className="absolute left-14 top-28 z-50 h-40 w-full overflow-hidden rounded-lg bg-stone-100 py-5 pl-7 pr-4 text-gray-400 dark:bg-[#19223c]"
+            className="absolute left-14 top-28 z-50 h-40 w-full overflow-hidden rounded-lg bg-[#eeeffc] py-5 pl-7 pr-4 text-gray-400 dark:bg-[#19223c]"
             initial={{ width: 0 }}
             whileInView={{ width: "100%" }}
             transition={{
@@ -51,7 +51,7 @@ function Projects() {
             </p>
           </motion.div>
           <div className="pl-14">
-            <div className="font-code flex space-x-4 text-gray-600 dark:text-gray-400">
+            <div className="flex space-x-4 font-code text-gray-600 dark:text-gray-400">
               <h1>Next.js</h1>
               <h1>React</h1>
               <h1>Tailwind CSS</h1>
