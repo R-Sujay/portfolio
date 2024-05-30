@@ -1,5 +1,5 @@
 import { client } from "@/sanity/lib/client";
-import { HeroType, SkillType } from "@/typings";
+import { HeroType, SkillType, ProjectsType, ServicesType } from "@/typings";
 
 async function getData() {
   const hero: HeroType = await client.fetch(
@@ -7,9 +7,12 @@ async function getData() {
   _id,
   status,
   name,
+  desc,
   profile,
   location,
-  desc
+  skills,
+  tags,
+  emailAdd
 }`,
   );
 
@@ -22,7 +25,29 @@ async function getData() {
 }`,
   );
 
-  return { hero, skills };
+  const services: ServicesType = await client.fetch(
+    `*[_type == "services"][0] {
+  _id,
+  desc,
+  mobile,
+  web,
+  dashboard,
+}`,
+  );
+
+  const projects: ProjectsType = await client.fetch(
+    `*[_type == "projects"] {
+  title,
+  URL,
+  bio,
+  'tech': tech[]-> {
+    title
+  },
+  image
+}`,
+  );
+
+  return { hero, skills, services, projects };
 }
 
 export default getData;

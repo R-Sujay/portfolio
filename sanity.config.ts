@@ -24,16 +24,21 @@ export default defineConfig({
           .title("Content")
           .items([
             // Our singleton type has a list item with a custom child
-            S.listItem().title("Hero").id("hero").child(
-              // Instead of rendering a list of documents, we render a single
-              // document, specifying the `documentId` manually to ensure
-              // that we're editing the single instance of the document
-              S.document().schemaType("hero").documentId("hero"),
-            ),
+            S.listItem()
+              .title("Hero")
+              .id("hero")
+              .child(S.document().schemaType("hero").documentId("hero")),
+
+            S.listItem()
+              .title("Services")
+              .id("services")
+              .child(
+                S.document().schemaType("services").documentId("services"),
+              ),
 
             // Regular document types
             S.documentTypeListItem("skills").title("Skills"),
-            S.documentTypeListItem("author").title("Authors"),
+            S.documentTypeListItem("projects").title("Projects"),
           ]),
     }),
 
@@ -43,8 +48,6 @@ export default defineConfig({
   ],
 
   document: {
-    // For singleton types, filter out actions that are not explicitly included
-    // in the `singletonActions` list defined above
     actions: (input, context) =>
       singletonTypes.has(context.schemaType)
         ? input.filter(({ action }) => action && singletonActions.has(action))

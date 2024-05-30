@@ -19,9 +19,36 @@ export default defineType({
     }),
 
     defineField({
+      name: "skills",
+      title: "Skills Description",
+      type: "string",
+    }),
+
+    defineField({
       name: "location",
       title: "Location",
       type: "string",
+    }),
+
+    defineField({
+      name: "emailAdd",
+      title: "Email Address",
+      type: "string",
+      validation: (rule) => rule.email(),
+    }),
+
+    defineField({
+      name: "desc",
+      title: "Description",
+      type: "array",
+      of: [
+        {
+          title: "Block",
+          type: "block",
+          styles: [{ title: "Normal", value: "normal" }],
+          lists: [],
+        },
+      ],
     }),
 
     defineField({
@@ -41,8 +68,8 @@ export default defineType({
     }),
 
     defineField({
-      name: "desc",
-      title: "Description",
+      name: "tags",
+      title: "Short Tags",
       type: "array",
       of: [{ type: "string" }],
     }),

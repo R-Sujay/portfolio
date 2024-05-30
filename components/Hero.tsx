@@ -59,16 +59,16 @@ function Hero({ hero }: Props) {
           {"<"}
           <span className="text-indigo-500">sujay</span>
           {">"}
-          <Typewriter words={hero.desc} loop={1} typeSpeed={7} cursor />
+          <Typewriter words={hero.tags} loop={1} typeSpeed={7} cursor />
           {"</"}
           <span className="text-indigo-500">sujay</span>
           {">"}
         </p>
-        <div className="mt-3 flex space-x-4">
-          <button className="rounded-2xl bg-indigo-500 px-8 py-4 text-sm font-semibold text-white shadow-2xl dark:bg-indigo-700">
-            Contact me
+        <div className="mt-3 flex w-[55%] space-x-5">
+          <button className="flex-1 rounded-2xl bg-indigo-500 text-sm font-semibold text-white shadow-2xl dark:bg-indigo-700">
+            View Profile
           </button>
-          <button className="slide-btn group h-14 rounded-2xl px-8 py-4 text-sm font-semibold text-indigo-500">
+          <button className="slide-btn group h-14 flex-1 rounded-2xl text-sm font-semibold text-indigo-500">
             View Resume
             <span className="slide-main" />
           </button>
@@ -83,7 +83,7 @@ function Hero({ hero }: Props) {
               fill={true}
               className="rounded-full object-cover"
               priority={true}
-              alt={hero.profile.alt}
+              alt={hero.name}
             />
           </div>
           <div className="hero_imageBorder h-[450px] w-[450px]" />
@@ -91,7 +91,7 @@ function Hero({ hero }: Props) {
         </div>
         <div className="absolute -z-10 h-[410px] w-[410px] overflow-hidden rounded-full lg:left-[10%] lg:top-5 lg:h-[450px] lg:w-[450px]">
           <div className="relative flex h-full w-full items-center justify-center">
-            <div className="absolute -z-10 h-[500px] w-[250px] animate-spin bg-gradient-to-r from-violet-500 to-fuchsia-500 lg:h-full lg:w-full"></div>
+            <div className="absolute -z-10 h-[500px] w-[250px] bg-gradient-to-r from-violet-500 to-fuchsia-500 lg:h-full lg:w-full"></div>
             <div className="hidden h-[375px] w-[375px] rounded-full bg-white dark:bg-[#13192d] lg:block"></div>
           </div>
         </div>

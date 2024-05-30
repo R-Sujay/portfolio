@@ -28,8 +28,6 @@ function NextBtn() {
     setSelected(nextSelectedItem.id);
   };
 
-  console.log(nextSelectedItem?.text.toLocaleLowerCase());
-
   return (
     <ScrollIntoView
       onClick={item}

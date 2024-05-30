@@ -6,10 +6,10 @@ import { useRecoilState } from "recoil";
 import { AnimateSharedLayout } from "framer-motion";
 import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
 import ScrollIntoView from "react-scroll-into-view";
-import items from "@/HeaderItemsData";
 import { useTheme } from "next-themes";
 import { selectedAtom } from "@/atoms/HeaderItem";
 import HeaderItem from "./HeaderItem";
+import items from "@/HeaderItemsData";
 
 function Header() {
   const [selected, setSelected] = useRecoilState(selectedAtom);

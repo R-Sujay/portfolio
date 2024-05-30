@@ -94,11 +94,16 @@ module.exports = {
             height: "400px",
           },
         },
+        barWobble: {
+          "0%, 100%": { transform: "translateX(-95%)" },
+          "50%": { transform: "translateX(95%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         spinBounce: "1.5s spinBounce ease 0s infinite",
+        barWobble: "barWobble 1.7s ease-in-out infinite",
         heroImage: "1.5s heroImage ease",
       },
     },
