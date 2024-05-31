@@ -2,17 +2,14 @@
 
 import React, { useEffect, useState } from "react";
 import { HiAcademicCap } from "react-icons/hi";
-import { useRecoilState } from "recoil";
-import { AnimateSharedLayout } from "framer-motion";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
-import ScrollIntoView from "react-scroll-into-view";
 import { useTheme } from "next-themes";
-import { selectedAtom } from "@/atoms/HeaderItem";
+import { isSelectingAtom, selectedAtom } from "@/atoms/HeaderItemAtom";
 import HeaderItem from "./HeaderItem";
 import items from "@/HeaderItemsData";
 
 function Header() {
-  const [selected, setSelected] = useRecoilState(selectedAtom);
   const [isScrolled, setIsScrolled] = useState<Boolean>(false);
   const { setTheme, theme } = useTheme();
   const isDark = theme === "dark";
@@ -48,20 +45,9 @@ function Header() {
         </div>
 
         {/* items */}
-        <ul className="m-0 flex list-none p-0">
+        <ul className="m-0 flex list-none space-x-8 p-0">
           {items.map((item, i) => (
-            <ScrollIntoView
-              selector={`#${item.text.toLocaleLowerCase()}`}
-              key={i}
-            >
-              <HeaderItem
-                text={item.text}
-                isSelected={selected === item.id}
-                onClick={() => {
-                  setSelected(item.id);
-                }}
-              />
-            </ScrollIntoView>
+            <HeaderItem item={item} key={i} />
           ))}
         </ul>
 

@@ -3,7 +3,9 @@
 import Image from "next/image";
 import React, { useRef, useEffect } from "react";
 import Marquee from "react-fast-marquee";
+import { useSetRecoilState } from "recoil";
 import { motion } from "framer-motion";
+import { selectedAtom } from "@/atoms/HeaderItemAtom";
 import { useTheme } from "next-themes";
 import { SkillType } from "@/typings";
 import { urlForImage } from "@/sanity/lib/image";
@@ -15,13 +17,12 @@ interface Props {
   desc: string;
 }
 
-function Skills({ skills, desc }: Props) {
+function Profile({ skills, desc }: Props) {
   const { theme } = useTheme();
   const dark = theme === "dark";
   const ref = useRef(null);
-  const skillArr = splitArray();
 
-  useSelectorHandler(ref, 2);
+  useSelectorHandler(ref, 1);
 
   function splitArray() {
     const midIndex = Math.ceil(skills.length / 2);
@@ -34,7 +35,7 @@ function Skills({ skills, desc }: Props) {
   return (
     <motion.div
       className="container flex items-center justify-between"
-      id="skills"
+      id="profile"
       ref={ref}
     >
       <div className="relative flex w-[30%] items-center pr-2">
@@ -45,26 +46,9 @@ function Skills({ skills, desc }: Props) {
         </div>
       </div>
 
-      <div className="relative w-[70%] space-y-5 overflow-x-hidden">
-        {skillArr.map((arr, i) => (
-          <Marquee speed={100} gradient={false} className="pl-16" key={i}>
-            {arr.map((skill) => (
-              <div className="marquee-child w-[260px]" key={skill._id}>
-                <Image
-                  src={urlForImage(
-                    skill.dark !== null && dark ? skill.dark : skill.light,
-                  )}
-                  alt=""
-                  className="object-contain"
-                  fill={true}
-                />
-              </div>
-            ))}
-          </Marquee>
-        ))}
-      </div>
+      <div className="relative w-[70%] space-y-5 overflow-x-hidden"></div>
     </motion.div>
   );
 }
 
-export default Skills;
+export default Profile;

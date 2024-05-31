@@ -81,7 +81,7 @@
     @apply h-full w-full bg-[#6366f1] transition-colors;
   }
   .container {
-    @apply mx-auto mt-[13vh] h-[87vh] max-w-7xl snap-end snap-always;
+    @apply mx-auto mt-[12vh] h-[87vh] max-w-7xl snap-end snap-always;
   }
   .hero_imageBorder {
     @apply absolute rounded-full border dark:border-slate-600;

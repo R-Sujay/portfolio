@@ -4,11 +4,10 @@ import Image from "next/image";
 import React, { useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
-import { useSetRecoilState } from "recoil";
-import { selectedAtom } from "@/atoms/HeaderItem";
 import AnimateText from "@/components/AnimateText";
 import { urlForImage } from "@/sanity/lib/image";
 import { HeroType } from "@/typings";
+import { useSelectorHandler } from "@/hooks/useSelectorHandler";
 
 interface Props {
   hero: HeroType;
@@ -16,20 +15,14 @@ interface Props {
 
 function Hero({ hero }: Props) {
   const ref = useRef(null);
-  const isInView = useInView(ref);
-  const setSelected = useSetRecoilState(selectedAtom);
   const placeholderText = [
     { type: "heading1", text: hero.name, style: "text-6xl font-semibold" },
   ];
 
-  useEffect(() => {
-    if (isInView) {
-      setSelected(0);
-    }
-  }, [isInView]);
+  useSelectorHandler(ref, 0);
 
   return (
-    <main className="container flex items-center" id="about" ref={ref}>
+    <motion.main className="container flex items-center" id="about" ref={ref}>
       <div className="relative w-[50%]">
         <h1 className="text-2xl font-semibold text-gray-400">Hi, I'm</h1>
         <motion.div
@@ -96,7 +89,7 @@ function Hero({ hero }: Props) {
           </div>
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 }
 

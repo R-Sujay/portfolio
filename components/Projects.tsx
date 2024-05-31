@@ -1,17 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import React, { useRef, useEffect } from "react";
-import airbnb from "../public/images/airbnb.png";
+import React, { useRef } from "react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
-import { FiGithub } from "react-icons/fi";
-import { motion, useInView } from "framer-motion";
-import { useRecoilState } from "recoil";
-import { selectedAtom } from "@/atoms/HeaderItem";
+import { motion } from "framer-motion";
 import { ProjectsType } from "@/typings";
 import { urlForImage } from "@/sanity/lib/image";
 import { PortableText } from "next-sanity";
 import Link from "next/link";
+import { useSelectorHandler } from "@/hooks/useSelectorHandler";
 
 interface Props {
   projects: ProjectsType;
@@ -19,21 +16,14 @@ interface Props {
 
 function Projects({ projects }: Props) {
   const ref = useRef(null);
-  const isInView = useInView(ref);
-  const [selected, setSelected] = useRecoilState(selectedAtom);
-  console.log(projects);
 
-  useEffect(() => {
-    if (isInView) {
-      setSelected(3);
-    }
-  }, [isInView]);
+  useSelectorHandler(ref, 4);
 
   return (
-    <div
+    <motion.div
       className="container max-w-7xl !snap-none space-y-5 py-5"
-      ref={ref}
       id="projects"
+      ref={ref}
     >
       {projects.map((item, i) => (
         <Link
@@ -64,8 +54,8 @@ function Projects({ projects }: Props) {
             </motion.div>
             <div className="pl-14">
               <div className="flex space-x-4 font-code text-gray-600 dark:text-gray-400">
-                {item.tech.map((tech) => (
-                  <h1>{tech.title}</h1>
+                {item.tech.map((tech, i) => (
+                  <h1 key={i}>{tech.title}</h1>
                 ))}
               </div>
               <div className="flex items-center space-x-5 pt-2 text-gray-600 dark:text-gray-200">
@@ -83,7 +73,7 @@ function Projects({ projects }: Props) {
           </div>
         </Link>
       ))}
-    </div>
+    </motion.div>
   );
 }
 

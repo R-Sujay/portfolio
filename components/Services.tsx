@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
-import { useInView } from "framer-motion";
-import { useRecoilState } from "recoil";
-import { selectedAtom } from "@/atoms/HeaderItem";
+import React, { useRef } from "react";
+import { useInView, motion } from "framer-motion";
 import { MdPhonelink } from "react-icons/md";
 import { HiSquaresPlus } from "react-icons/hi2";
 import { RiDashboardHorizontalFill } from "react-icons/ri";
 import { ServicesType } from "@/typings";
 import "ldrs/lineWobble";
 import BarLoader from "./BarLoader";
+import { useSelectorHandler } from "@/hooks/useSelectorHandler";
 
 interface Props {
   services: ServicesType;
@@ -17,8 +16,8 @@ interface Props {
 
 function Services({ services }: Props) {
   const ref = useRef(null);
-  const isInView = useInView(ref);
-  const [selected, setSelected] = useRecoilState(selectedAtom);
+
+  useSelectorHandler(ref, 3);
 
   const data = [
     {
@@ -38,17 +37,11 @@ function Services({ services }: Props) {
     },
   ];
 
-  useEffect(() => {
-    if (isInView) {
-      setSelected(2);
-    }
-  }, [isInView]);
-
   return (
-    <div
+    <motion.div
       className="container flex items-center justify-between bg-indigo-100/40 px-0 dark:bg-[#19223c]"
+      id="services"
       ref={ref}
-      id="Services"
     >
       <div className="relative flex h-[50%] w-[35%] items-center justify-end rounded-r-full bg-white pr-2 shadow-lg dark:bg-[#13192d]">
         <BarLoader />
@@ -70,7 +63,7 @@ function Services({ services }: Props) {
           >
             {item.Icon}
             <div className="px-3">
-              <h1 className="font-code text-[26px] leading-7 tracking-widest text-gray-100">
+              <h1 className="font-code text-[26px] leading-8 tracking-widest text-gray-100">
                 {item.title}
               </h1>
               <p className="mt-2 text-sm text-gray-400">{item.desc}</p>
@@ -78,7 +71,7 @@ function Services({ services }: Props) {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

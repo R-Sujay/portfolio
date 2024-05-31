@@ -1,26 +1,45 @@
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
+import { isSelectingAtom, selectedAtom } from "@/atoms/HeaderItemAtom";
+import { useRecoilState, useRecoilValue } from "recoil";
+import items from "@/HeaderItemsData";
+import { useScrollSelectHandler } from "@/hooks/useScrollSelectHandler";
 
 interface Props {
-  text: string;
-  isSelected: boolean;
-  onClick: any;
+  item: {
+    text: string;
+    id: number;
+  };
 }
 
-function HeaderItem({ text, isSelected, onClick }: Props) {
+function HeaderItem({ item }: Props) {
+  const selected = useRecoilValue(selectedAtom);
+  const [isSelecting, setIsSelecting] = useRecoilState(isSelectingAtom);
+  console.log(items.find((item) => item.id === selected)?.text);
+
+  const handleSelector = useScrollSelectHandler(item.text, item.id);
+
   return (
-    <li className="m-5 relative cursor-pointer flex-shrink-0 flex h-1 items-center justify-center lg:h-3 rounded-2xl" onClick={onClick}>
-      <h1 className="z-50 text-lg font-semibold text-indigo-600 transition-colors">{text}</h1>
-      {isSelected && (
+    <li
+      className="relative flex flex-shrink-0 cursor-pointer items-center justify-center rounded-3xl px-2 lg:h-14"
+      onClick={() => handleSelector}
+    >
+      <h1 className="z-50 text-lg font-semibold text-indigo-600 transition-colors">
+        {item.text}
+      </h1>
+      {selected === item.id && (
         <motion.div
           layoutId="outline"
-          className="absolute -top-[20px] -left-[20px] -right-[20px] -bottom-[20px] rounded-2xl bg-violet-100/70 dark:bg-[#19223c]"
+          className="absolute -bottom-[20px] -left-[20px] -right-[20px] -top-[1%] -z-10 h-14 rounded-2xl bg-violet-100/70 dark:bg-[#19223c]"
           initial={false}
           transition={{
             stiffness: 500,
             damping: 20,
             type: "spring",
           }}
+          onAnimationEndCapture={() => setIsSelecting(false)}
         />
       )}
     </li>

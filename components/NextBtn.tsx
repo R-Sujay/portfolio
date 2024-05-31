@@ -1,37 +1,32 @@
 "use client";
 
-import items from "@/HeaderItemsData";
-import { selectedAtom } from "@/atoms/HeaderItem";
+import items, { item } from "@/HeaderItemsData";
+import { selectedAtom } from "@/atoms/HeaderItemAtom";
+import { useScrollSelectHandler } from "@/hooks/useScrollSelectHandler";
 import React, { useEffect, useState } from "react";
 import ScrollIntoView from "react-scroll-into-view";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 function NextBtn() {
-  const [selected, setSelected] = useRecoilState(selectedAtom);
-  const [nextSelectedItem, setNextSelectedItem] = useState<any>(items[0]);
+  const selected = useRecoilValue(selectedAtom);
   const lastArrayIndex = items.length - 1;
-
-  useEffect(() => {
-    const nextSection = selected + 1;
-    const searchResults = items.filter((item) =>
-      item.id?.toString().startsWith(nextSection.toPrecision()),
-    );
-
-    if (selected === lastArrayIndex) {
-      setNextSelectedItem(items[0]);
-    } else {
-      setNextSelectedItem(searchResults[0]);
-    }
-  }, [selected]);
+  const nextSection = selected + 1;
 
   const item = () => {
-    setSelected(nextSelectedItem.id);
+    const searchResults = items.find((item) => item.id === nextSection);
+    const nextSelectedItem =
+      selected === lastArrayIndex ? items[0] : searchResults;
+
+    if (nextSelectedItem) {
+      console.log(nextSelectedItem);
+
+      useScrollSelectHandler(nextSelectedItem.text, nextSelectedItem.id);
+    }
   };
 
   return (
-    <ScrollIntoView
+    <div
       onClick={item}
-      selector={`#${nextSelectedItem?.text.toLocaleLowerCase()}`}
       className="fixed left-[50%] right-[50%] top-[85%] z-50 animate-spinBounce delay-700"
     >
       <a className="slide-btn group h-10 w-10">
@@ -43,7 +38,7 @@ function NextBtn() {
         />
         <span className="slide-main" />
       </a>
-    </ScrollIntoView>
+    </div>
   );
 }
 
