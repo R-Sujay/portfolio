@@ -1,24 +1,45 @@
 import { BlockDefinition, Image } from "sanity";
+import { SanityDocument } from "next-sanity";
 
-interface Image {
-  _type: "image";
-  asset: {
-    _ref: string;
-    _type: "reference";
-  };
-  alt: string;
+interface FormData {
+  company: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+type FormState = {
+  message: string;
+  status: number;
+  res?: SanityDocument<{
+    company: FormDataEntryValue | null;
+    email: FormDataEntryValue | null;
+    subject: FormDataEntryValue | null;
+    message: FormDataEntryValue | null;
+    _type: string;
+  }>;
+};
+
+interface ContactType {
+  _id?: string;
+  company: string;
+  subject: string;
+  message: string;
+  email: string;
 }
 
 interface HeroType {
   _id: string;
   status: string;
+  secProfile: Image;
+  resumePdf: string;
   skills: string;
   name: string;
   profile: Image;
   location: string;
   desc: SanityBlock[];
   tags: string[];
-  emailAdd: string;
+  email: string;
 }
 
 interface ServicesType {

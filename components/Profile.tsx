@@ -7,46 +7,46 @@ import { useSetRecoilState } from "recoil";
 import { motion } from "framer-motion";
 import { selectedAtom } from "@/atoms/HeaderItemAtom";
 import { useTheme } from "next-themes";
-import { SkillType } from "@/typings";
-import { urlForImage } from "@/sanity/lib/image";
+import { HeroType, SkillType } from "@/typings";
+import { urlForImage } from "@/sanity/lib/asset";
 import BarLoader from "./BarLoader";
 import { useSelectorHandler } from "@/hooks/useSelectorHandler";
+import { PortableText } from "next-sanity";
 
 interface Props {
-  skills: SkillType;
-  desc: string;
+  hero: HeroType;
 }
 
-function Profile({ skills, desc }: Props) {
+function Profile({ hero }: Props) {
   const { theme } = useTheme();
-  const dark = theme === "dark";
   const ref = useRef(null);
 
   useSelectorHandler(ref, 1);
 
-  function splitArray() {
-    const midIndex = Math.ceil(skills.length / 2);
-    const firstHalf = skills.slice(0, midIndex);
-    const secondHalf = skills.slice(midIndex);
-
-    return [firstHalf, secondHalf];
-  }
-
   return (
     <motion.div
-      className="container flex items-center justify-between"
+      className="container flex max-w-5xl items-center justify-between"
       id="profile"
       ref={ref}
     >
-      <div className="relative flex w-[30%] items-center pr-2">
-        <BarLoader />
-        <div className="text-4xl font-bold">
-          <h1 className="text-indigo-500">Skills</h1>
-          <h1 className="text-sm font-normal text-gray-400">{desc}</h1>
-        </div>
+      <div className="relative flex h-full w-[70%] flex-col items-start justify-between py-10 pt-[10%]">
+        <h1 className="flex text-4xl font-semibold text-gray-400">
+          My
+          <span className="pl-2 font-semibold text-indigo-600">Profile</span>
+        </h1>
+        <motion.div className="absolute -right-20 top-[25%] z-50 overflow-hidden rounded-lg bg-[#eeeffc] py-5 pl-7 pr-14 text-gray-400 dark:bg-[#19223c]">
+          <PortableText value={hero.desc} />
+        </motion.div>
       </div>
 
-      <div className="relative w-[70%] space-y-5 overflow-x-hidden"></div>
+      <div className="relative z-50 h-[55%] w-[55%] opacity-80 dark:opacity-75">
+        <Image
+          src={urlForImage(hero.secProfile)}
+          alt=""
+          fill={true}
+          className="rounded-xl object-contain"
+        />
+      </div>
     </motion.div>
   );
 }

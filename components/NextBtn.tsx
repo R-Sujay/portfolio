@@ -2,7 +2,7 @@
 
 import items, { item } from "@/HeaderItemsData";
 import { selectedAtom } from "@/atoms/HeaderItemAtom";
-import { useScrollSelectHandler } from "@/hooks/useScrollSelectHandler";
+import { useScrollIntoViewHandler } from "@/hooks/useScrollIntoViewHandler";
 import React, { useEffect, useState } from "react";
 import ScrollIntoView from "react-scroll-into-view";
 import { useRecoilState, useRecoilValue } from "recoil";
@@ -11,6 +11,7 @@ function NextBtn() {
   const selected = useRecoilValue(selectedAtom);
   const lastArrayIndex = items.length - 1;
   const nextSection = selected + 1;
+  const { selectItem } = useScrollIntoViewHandler();
 
   const item = () => {
     const searchResults = items.find((item) => item.id === nextSection);
@@ -20,7 +21,7 @@ function NextBtn() {
     if (nextSelectedItem) {
       console.log(nextSelectedItem);
 
-      useScrollSelectHandler(nextSelectedItem.text, nextSelectedItem.id);
+      selectItem(nextSelectedItem.text, nextSelectedItem.id);
     }
   };
 

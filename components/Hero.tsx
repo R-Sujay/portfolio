@@ -5,9 +5,11 @@ import React, { useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import AnimateText from "@/components/AnimateText";
-import { urlForImage } from "@/sanity/lib/image";
+import { urlForImage } from "@/sanity/lib/asset";
 import { HeroType } from "@/typings";
 import { useSelectorHandler } from "@/hooks/useSelectorHandler";
+import { useScrollIntoViewHandler } from "@/hooks/useScrollIntoViewHandler";
+import Link from "next/link";
 
 interface Props {
   hero: HeroType;
@@ -18,6 +20,7 @@ function Hero({ hero }: Props) {
   const placeholderText = [
     { type: "heading1", text: hero.name, style: "text-6xl font-semibold" },
   ];
+  const { selectItem } = useScrollIntoViewHandler();
 
   useSelectorHandler(ref, 0);
 
@@ -58,13 +61,20 @@ function Hero({ hero }: Props) {
           {">"}
         </p>
         <div className="mt-3 flex w-[55%] space-x-5">
-          <button className="flex-1 rounded-2xl bg-indigo-500 text-sm font-semibold text-white shadow-2xl dark:bg-indigo-700">
+          <button
+            onClick={() => selectItem("profile", 1)}
+            className="flex-1 rounded-2xl bg-indigo-500 text-sm font-semibold text-white shadow-2xl dark:bg-indigo-700"
+          >
             View Profile
           </button>
-          <button className="slide-btn group h-14 flex-1 rounded-2xl text-sm font-semibold text-indigo-500">
+          <Link
+            href={hero.resumePdf}
+            target="_blank"
+            className="slide-btn group flex h-14 flex-1 items-center justify-center rounded-2xl text-sm font-semibold text-indigo-500"
+          >
             View Resume
             <span className="slide-main" />
-          </button>
+          </Link>
         </div>
       </div>
 

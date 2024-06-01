@@ -31,7 +31,7 @@ export default defineType({
     }),
 
     defineField({
-      name: "emailAdd",
+      name: "email",
       title: "Email Address",
       type: "string",
       validation: (rule) => rule.email(),
@@ -51,6 +51,23 @@ export default defineType({
       ],
     }),
 
+    // Field with accept option set to PDF
+    defineField({
+      name: "resumePdf",
+      title: "Resume PDF",
+      type: "file",
+      options: {
+        accept: "application/pdf",
+      },
+    }),
+
+    defineField({
+      name: "tags",
+      title: "Short Tags",
+      type: "array",
+      of: [{ type: "string" }],
+    }),
+
     defineField({
       name: "profile",
       title: "Profile",
@@ -68,10 +85,19 @@ export default defineType({
     }),
 
     defineField({
-      name: "tags",
-      title: "Short Tags",
-      type: "array",
-      of: [{ type: "string" }],
+      name: "secProfile",
+      title: "Secondary Profile",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text",
+        },
+      ],
     }),
   ],
 

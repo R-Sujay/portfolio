@@ -6,7 +6,7 @@ import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { SkillType } from "@/typings";
-import { urlForImage } from "@/sanity/lib/image";
+import { urlForImage } from "@/sanity/lib/asset";
 import BarLoader from "./BarLoader";
 import { useSelectorHandler } from "@/hooks/useSelectorHandler";
 

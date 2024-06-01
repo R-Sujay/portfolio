@@ -8,15 +8,16 @@ export function useSelectorHandler(
   item: number,
 ) {
   const setSelected = useSetRecoilState(selectedAtom);
-  const isInView = useInView(ref, { amount: "all" });
+  const isInView = useInView(ref, {
+    amount: "some",
+  });
   const isSelecting = useRecoilValue(isSelectingAtom);
-  console.log(isSelecting);
 
-  // useEffect(() => {
-  //   if (isInView && !isSelecting) {
-  //     setSelected(item);
-  //   }
-  // }, [isInView]);
+  useEffect(() => {
+    if (isInView && !isSelecting) {
+      setSelected(item);
+    }
+  }, [isInView]);
 
   return;
 }

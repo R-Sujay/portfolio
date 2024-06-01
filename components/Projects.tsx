@@ -5,7 +5,7 @@ import React, { useRef } from "react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { ProjectsType } from "@/typings";
-import { urlForImage } from "@/sanity/lib/image";
+import { urlForImage } from "@/sanity/lib/asset";
 import { PortableText } from "next-sanity";
 import Link from "next/link";
 import { useSelectorHandler } from "@/hooks/useSelectorHandler";

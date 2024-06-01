@@ -81,7 +81,7 @@
     @apply h-full w-full bg-[#6366f1] transition-colors;
   }
   .container {
-    @apply mx-auto mt-[12vh] h-[87vh] max-w-7xl snap-end snap-always;
+    @apply mx-auto mt-[13.1vh] h-[87vh] max-h-[87vh] max-w-7xl snap-end snap-always;
   }
   .hero_imageBorder {
     @apply absolute rounded-full border dark:border-slate-600;
@@ -91,6 +91,12 @@
   }
   .slide-btn {
     @apply relative block cursor-pointer overflow-hidden border border-indigo-500 transition-all duration-500;
+  }
+  .input {
+    @apply w-full resize-none rounded-3xl px-4 outline-4 placeholder:font-semibold focus:outline focus:outline-indigo-600;
+  }
+  .inputError {
+    @apply outline outline-2 outline-red-600 focus:outline-red-600;
   }
   .slide-main {
     @apply absolute -top-full left-0 z-0 block h-full w-[103%] bg-indigo-500  group-hover:translate-y-[200%] group-hover:duration-300 group-hover:ease-in-out dark:bg-indigo-700;

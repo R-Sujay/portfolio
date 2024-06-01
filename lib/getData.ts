@@ -8,11 +8,13 @@ async function getData() {
   status,
   name,
   desc,
+  secProfile,
   profile,
   location,
   skills,
   tags,
-  emailAdd
+  "resumePdf": resumePdf.asset->url,
+  email
 }`,
   );
 
