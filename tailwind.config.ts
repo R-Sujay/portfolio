@@ -12,12 +12,13 @@ module.exports = {
       poppins: ["Poppins", "sans-serif"],
       code: ["SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "monospace"],
     },
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+    screens: {
+      xs: "320px",
+      sm: "640px",
+      md: "790px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
     },
     extend: {
       flex: {

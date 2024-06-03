@@ -18,7 +18,6 @@ interface Props {
 }
 
 function Profile({ hero }: Props) {
-  const { theme } = useTheme();
   const ref = useRef(null);
 
   useSelectorHandler(ref, 1);

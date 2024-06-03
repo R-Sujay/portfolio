@@ -17,7 +17,6 @@ interface Props {
 function HeaderItem({ item }: Props) {
   const selected = useRecoilValue(selectedAtom);
   const [isSelecting, setIsSelecting] = useRecoilState(isSelectingAtom);
-  console.log(isSelecting);
 
   const { selectItem } = useScrollIntoViewHandler();
 
@@ -45,7 +44,7 @@ function HeaderItem({ item }: Props) {
 
   return (
     <li
-      className="relative flex flex-shrink-0 cursor-pointer items-center justify-center rounded-3xl px-2 lg:h-14"
+      className="relative flex flex-shrink-0 cursor-pointer items-center justify-center rounded-3xl px-0.5 lg:mx-0 lg:h-14 lg:px-2"
       onClick={() => selectItem(item.text, item.id)}
     >
       <h1 className="z-50 text-lg font-semibold text-indigo-600 transition-colors">
@@ -54,7 +53,7 @@ function HeaderItem({ item }: Props) {
       {selected === item.id && (
         <motion.div
           layoutId="outline"
-          className="absolute -bottom-[20px] -left-[20px] -right-[20px] -top-[1%] -z-10 h-14 rounded-2xl bg-violet-100/70 dark:bg-[#19223c]"
+          className="absolute -bottom-3 -left-5 -right-5 -z-10 h-[53px] rounded-2xl bg-violet-100/70 dark:bg-[#19223c] lg:top-[1%]"
           initial={false}
           // ref={divRef}
           transition={{

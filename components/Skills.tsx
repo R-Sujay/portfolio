@@ -1,10 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
 import { SkillType } from "@/typings";
 import { urlForImage } from "@/sanity/lib/asset";
 import BarLoader from "./BarLoader";
@@ -16,8 +15,7 @@ interface Props {
 }
 
 function Skills({ skills, desc }: Props) {
-  const { theme } = useTheme();
-  const dark = theme === "dark";
+  const dark = true;
   const ref = useRef(null);
   const skillArr = splitArray();
 
@@ -33,23 +31,28 @@ function Skills({ skills, desc }: Props) {
 
   return (
     <motion.div
-      className="container flex items-center justify-between"
+      className="container flex flex-col items-center px-0 lg:flex-row lg:justify-between"
       id="skills"
       ref={ref}
     >
-      <div className="relative flex w-[30%] items-center pr-2">
-        <BarLoader />
+      <div className="relative mb-10 flex items-center px-10 pr-2 lg:mb-0 lg:w-[30%]">
+        <BarLoader className="hidden lg:block" />
         <div className="text-4xl font-bold">
-          <h1 className="text-indigo-500">Skills</h1>
-          <h1 className="text-sm font-normal text-gray-400">{desc}</h1>
+          <h1 className="text-center text-indigo-500 lg:text-left">Skills</h1>
+          <h1 className="text-center text-sm font-normal text-gray-400 lg:text-left">
+            {desc}
+          </h1>
         </div>
       </div>
 
-      <div className="relative w-[70%] space-y-5 overflow-x-hidden">
+      <div className="relative h-[100%] w-full flex-col justify-start space-y-10 overflow-hidden sm:space-y-2 md:space-y-8 lg:h-auto lg:w-[70%] lg:space-y-10 lg:pb-0">
         {skillArr.map((arr, i) => (
-          <Marquee speed={100} gradient={false} className="pl-16" key={i}>
+          <Marquee speed={100} gradient={false} key={i}>
             {arr.map((skill) => (
-              <div className="marquee-child w-[260px]" key={skill._id}>
+              <div
+                className={`relative mx-5 flex h-24 w-[45vw] items-center justify-center md:h-32 md:w-[18vw] lg:h-[20vh] lg:w-[15vw]`}
+                key={skill._id}
+              >
                 <Image
                   src={urlForImage(
                     skill.dark !== null && dark ? skill.dark : skill.light,

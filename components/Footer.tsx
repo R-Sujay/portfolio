@@ -1,6 +1,6 @@
 "use client";
 
-import { onSubmitAction } from "@/actions/formAction";
+import { onSubmitAction } from "@/utils/formAction";
 import { FormState, FormData, HeroType } from "@/typings";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";

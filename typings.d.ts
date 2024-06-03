@@ -1,6 +1,10 @@
 import { BlockDefinition, Image } from "sanity";
 import { SanityDocument } from "next-sanity";
 
+interface Children {
+  children: React.ReactNode;
+}
+
 interface FormData {
   company: string;
   email: string;
