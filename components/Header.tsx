@@ -8,16 +8,16 @@ import { setTheme } from "@/utils/setTheme";
 import HeaderThemeButton from "./HeaderThemeButton";
 
 async function Header() {
-  const theme = await getTheme();
-  const changeTheme = async () =>
-    await setTheme(theme === "light" ? "dark" : "light");
+  // const theme = await getTheme();
+  // const changeTheme = async () =>
+  // await setTheme(theme === "light" ? "dark" : "light");
 
   return (
     <header
-      className={`fixed left-0 top-0 z-[100] flex h-[13vh] max-h-[13vh] w-screen items-center justify-center bg-white dark:bg-[#13192d]`}
+      className={`fixed left-0 top-0 z-[100] flex h-[13vh] max-h-[13vh] min-h-[75px] w-screen items-center justify-center bg-white dark:bg-[#13192d]`}
       id="header"
     >
-      <div className="flex w-full items-center justify-between px-5 pt-5 lg:max-w-7xl lg:px-10 2xl:px-0">
+      <div className="flex w-full items-center justify-between px-5 lg:max-w-7xl lg:px-10 2xl:px-0">
         {/* Logo */}
         <div className="rounded-xl bg-indigo-500 p-2 text-white">
           <HiAcademicCap className="h-7 w-7" />

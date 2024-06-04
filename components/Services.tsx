@@ -21,17 +21,23 @@ function Services({ services }: Props) {
 
   const data = [
     {
-      Icon: <HiSquaresPlus className="h-[75px] w-[75px]" />,
+      Icon: (
+        <HiSquaresPlus className="ml-1 h-[70px] w-[60px] sm:h-[65px] sm:w-[60px] md:h-[80px] md:w-[75px]" />
+      ),
       title: "Mobile App Design",
       desc: services.mobile,
     },
     {
-      Icon: <MdPhonelink className="h-[73px] w-[85px] pl-3" />,
+      Icon: (
+        <MdPhonelink className="h-[66px] w-[73px] pl-3 sm:mb-10 md:h-[80px] md:w-[87px]" />
+      ),
       title: "Responsive Web Website",
       desc: services.web,
     },
     {
-      Icon: <RiDashboardHorizontalFill className="h-[75px] w-[75px]" />,
+      Icon: (
+        <RiDashboardHorizontalFill className="h-[70px] w-[60px] pl-2 sm:h-[65px] sm:w-[70px] md:h-[80px] md:w-[75px] md:pl-0" />
+      ),
       title: "Dashboard Design",
       desc: services.dashboard,
     },
@@ -39,38 +45,36 @@ function Services({ services }: Props) {
 
   return (
     <motion.div
-      className="container flex items-center justify-between bg-indigo-100/40 px-0 dark:bg-[#19223c]"
+      className="container relative flex flex-col items-center justify-between space-x-3 bg-indigo-100/40 px-0 pb-14 pr-3 dark:bg-[#19223c] sm:flex-row md:space-x-5 md:pr-5 lg:space-x-4 lg:pb-0 lg:pr-4 xl:space-x-5 xl:pr-5"
       id="services"
       ref={ref}
     >
-      <div className="relative flex h-[50%] w-[35%] items-center justify-end rounded-r-full bg-white pr-2 shadow-lg dark:bg-[#13192d]">
-        <BarLoader />
-        <div className="text-4xl font-bold">
-          <h1 className="text-gray-500">
+      <div className="flex max-h-[250px] w-full items-center justify-center pl-5 sm:absolute sm:top-5 md:max-h-[300px] lg:relative lg:h-[60vh] lg:w-[30%] lg:rounded-r-full lg:bg-white lg:shadow-lg lg:dark:bg-[#13192d] xl:relative xl:w-[35%] xl:pl-0">
+        <BarLoader className="hidden lg:block" />
+        <div className="text-center lg:text-left">
+          <h1 className="text-3xl font-bold text-gray-500 md:text-4xl">
             Top <span className="text-indigo-500">Services</span>
           </h1>
-          <h1 className="mt-3 w-[70%] text-sm font-normal text-gray-400">
+          <h1 className="mt-3 text-xs text-gray-400 md:text-sm lg:w-[70%]">
             {services.desc}
           </h1>
         </div>
       </div>
 
-      <div className="relative mx-5 flex h-[50%] flex-1 items-center justify-center space-x-5">
-        {data.map((item, i) => (
-          <div
-            key={i}
-            className="h-full flex-1 rounded-3xl bg-white px-5 py-3 text-[#313e64] dark:bg-[#13192d]"
-          >
-            {item.Icon}
-            <div className="px-3">
-              <h1 className="font-code text-[26px] leading-8 tracking-widest text-gray-100">
-                {item.title}
-              </h1>
-              <p className="mt-2 text-sm text-gray-400">{item.desc}</p>
-            </div>
+      {data.map((item, i) => (
+        <div
+          key={i}
+          className="mx-auto mt-5 h-[60vh] max-h-[250px] max-w-sm flex-1 rounded-3xl bg-white px-3 pb-5 pt-3 text-[#313e64] dark:bg-[#13192d] sm:mt-20 sm:max-w-max sm:px-3 sm:py-3 md:mt-24 md:max-h-[300px] lg:mt-0 xl:px-5"
+        >
+          <div className="h-[31%]">{item.Icon}</div>
+          <div className="px-3">
+            <h1 className="font-code text-lg leading-6 tracking-wide text-gray-100 sm:w-[81%] sm:text-lg md:text-2xl lg:w-[89%] xl:w-full xl:text-[26px] xl:leading-8 xl:tracking-widest">
+              {item.title}
+            </h1>
+            <p className="mt-2 text-sm text-gray-400">{item.desc}</p>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </motion.div>
   );
 }

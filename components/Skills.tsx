@@ -50,7 +50,7 @@ function Skills({ skills, desc }: Props) {
           <Marquee speed={100} gradient={false} key={i}>
             {arr.map((skill) => (
               <div
-                className={`relative mx-5 flex h-24 w-[45vw] items-center justify-center md:h-32 md:w-[18vw] lg:h-[20vh] lg:w-[15vw]`}
+                className={`relative mx-5 flex h-16 w-[30vw] items-center justify-center sm:h-36 sm:w-[25vw] md:h-28 md:w-[18vw] lg:h-[20vh] lg:w-[15vw]`}
                 key={skill._id}
               >
                 <Image

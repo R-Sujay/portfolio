@@ -17,7 +17,7 @@ export default async function Home() {
 
       {/* <Hero hero={hero} /> */}
       {/* <Profile hero={hero} /> */}
-      {/* <Skills skills={skills} desc={hero.skills} /> */}
+      <Skills skills={skills} desc={hero.skills} />
       <Services services={services} />
       {/* <Projects projects={projects} /> */}
 

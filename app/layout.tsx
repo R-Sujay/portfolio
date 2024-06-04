@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 
 export default async function RootLayout({ children }: Children) {
-  console.log(await getTheme());
+  // console.log(await getTheme());
 
   return (
     <html lang="en">
