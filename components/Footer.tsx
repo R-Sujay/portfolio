@@ -55,9 +55,12 @@ function Footer({ hero }: Props) {
   };
 
   return (
-    <div className="container mt-0 h-[75vh] max-w-full bg-indigo-100/40 px-5 dark:bg-[#19223c]">
-      <div className="mx-auto flex h-full w-full max-w-4xl justify-between">
-        <div className="flex flex-col justify-center space-y-2">
+    <div className="container mt-0 !h-max max-h-none max-w-full snap-none bg-indigo-100/40 px-2 dark:bg-[#19223c] md:px-10 lg:px-5">
+      <div className="mx-auto flex h-full w-full max-w-4xl flex-col items-center justify-between md:flex-row">
+        <div className="flex flex-col justify-center space-y-2 text-center md:text-left">
+          <h1 className="text-center font-code text-3xl font-bold text-indigo-500 md:hidden">
+            Let's Talk.
+          </h1>
           <div className="">
             <h1 className="font-code text-2xl font-bold text-indigo-500">
               Location
@@ -89,7 +92,7 @@ function Footer({ hero }: Props) {
             <h1>{hero.email}</h1>
           </div>
 
-          <div className="pt-5">
+          <div className="hidden pt-5 md:block">
             <Link
               href={hero.resumePdf}
               target="_blank"
@@ -102,10 +105,10 @@ function Footer({ hero }: Props) {
         </div>
 
         <form
-          className={`h-full w-1/2 space-y-3 pb-10 pt-5 ${loading && "animate-pulse opacity-80"}`}
+          className={`h-full space-y-3 pb-10 pt-5 md:w-[55%] lg:w-1/2 ${loading && "animate-pulse opacity-80"}`}
           onSubmit={handleSubmit(submit)}
         >
-          <h1 className="text-center font-code text-3xl font-bold text-indigo-500">
+          <h1 className="hidden text-center font-code text-3xl font-bold text-indigo-500 md:block">
             Let's Talk.
           </h1>
           <div className="flex h-16 space-x-3">
@@ -144,13 +147,22 @@ function Footer({ hero }: Props) {
             disabled={loading}
           />
 
-          <button
-            className="w-full rounded-2xl bg-indigo-700 py-3 font-semibold"
-            type="submit"
-            disabled={loading}
-          >
-            Submit
-          </button>
+          <div className="flex w-full items-center justify-between space-x-1 xs:space-x-2 sm:space-x-4">
+            <button
+              className="w-1/2 rounded-2xl bg-indigo-700 py-3 text-xl font-semibold text-white md:w-full"
+              type="submit"
+              disabled={loading}
+            >
+              Submit
+            </button>
+            <Link
+              href={hero.resumePdf}
+              target="_blank"
+              className="w-1/2 rounded-2xl border border-indigo-500 py-3 text-center text-xl font-semibold text-indigo-500 md:hidden"
+            >
+              View Resume
+            </Link>
+          </div>
         </form>
       </div>
     </div>

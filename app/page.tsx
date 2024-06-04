@@ -12,7 +12,7 @@ export default async function Home() {
   const { hero, skills, services, projects } = await getData();
 
   return (
-    <main className="relative z-10 h-screen w-full overflow-x-hidden scroll-smooth pb-28 font-poppins  transition-colors scrollbar-hide dark:bg-[#13192d] lg:snap-y lg:snap-mandatory">
+    <main className="relative z-10 h-screen w-full overflow-x-hidden scroll-smooth font-poppins transition-colors  scrollbar-hide dark:bg-[#13192d] lg:snap-y lg:snap-mandatory lg:pb-28">
       <Header />
 
       {/* <Hero hero={hero} /> */}
@@ -21,7 +21,7 @@ export default async function Home() {
       <Services services={services} />
       {/* <Projects projects={projects} /> */}
 
-      {/* <Footer hero={hero} /> */}
+      <Footer hero={hero} />
       <NextBtn />
     </main>
   );
