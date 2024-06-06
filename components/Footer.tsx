@@ -55,7 +55,10 @@ function Footer({ hero }: Props) {
   };
 
   return (
-    <div className="container mt-0 !h-max max-h-none max-w-full snap-none bg-indigo-100/40 px-2 dark:bg-[#19223c] md:px-10 lg:px-5">
+    <div
+      id="footer"
+      className="container mt-0 !h-max max-h-none max-w-full snap-none bg-indigo-100/40 px-2 dark:bg-[#19223c] md:px-10 lg:px-5"
+    >
       <div className="mx-auto flex h-full w-full max-w-4xl flex-col items-center justify-between md:flex-row">
         <div className="flex flex-col justify-center space-y-2 text-center md:text-left">
           <h1 className="text-center font-code text-3xl font-bold text-indigo-500 md:hidden">

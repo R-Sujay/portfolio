@@ -15,11 +15,11 @@ export default async function Home() {
     <main className="relative z-10 h-screen w-full overflow-x-hidden scroll-smooth font-poppins transition-colors  scrollbar-hide dark:bg-[#13192d] lg:snap-y lg:snap-mandatory lg:pb-28">
       <Header />
 
-      {/* <Hero hero={hero} /> */}
-      {/* <Profile hero={hero} /> */}
+      <Hero hero={hero} />
+      <Profile hero={hero} />
       <Skills skills={skills} desc={hero.skills} />
       <Services services={services} />
-      {/* <Projects projects={projects} /> */}
+      <Projects projects={projects} />
 
       <Footer hero={hero} />
       <NextBtn />

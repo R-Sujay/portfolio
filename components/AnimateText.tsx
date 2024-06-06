@@ -16,7 +16,7 @@ const AnimatedCharacters: React.FC<{
   type: string;
   hiddenColor: string;
   visibleColor: string;
-  style: string;
+  className: string;
 }> = (props) => {
   const item = {
     hidden: {
@@ -52,7 +52,7 @@ const AnimatedCharacters: React.FC<{
   const Tag = tagMap[props.type];
 
   return (
-    <Tag>
+    <Tag className="max-h-20">
       {words.map((word, index) => (
         <Wrapper key={index}>
           {word.map((element, charIndex) => (
@@ -69,7 +69,7 @@ const AnimatedCharacters: React.FC<{
                   display: "inline-block",
                 }}
                 variants={item}
-                className={props.style}
+                className={props.className}
               >
                 {element}
               </motion.span>
