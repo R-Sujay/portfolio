@@ -24,20 +24,20 @@ function Profile({ hero }: Props) {
 
   return (
     <motion.div
-      className="container relative h-full max-w-4xl"
+      className="container relative h-full max-w-4xl lg:h-[87vh] lg:max-h-[87vh]"
       id="profile"
       ref={ref}
     >
       <div className="flex h-full w-full items-center justify-center">
         <div className="flex h-full w-full flex-col items-center justify-between sm:max-h-[330px] sm:flex-row lg:max-h-96">
           <div className="relative flex h-full flex-col sm:w-[68%] sm:justify-between sm:pl-7 md:w-[65%] lg:pl-0">
-            <h1 className="mx-auto flex text-3xl font-semibold text-gray-400 sm:mx-0 lg:text-4xl">
+            <h1 className="dark:text-darkGrey mx-auto flex text-3xl font-semibold text-gray-500 sm:mx-0 lg:text-4xl">
               My
-              <span className="pl-2 font-semibold text-indigo-600">
+              <span className="pl-2 font-semibold text-black dark:text-white">
                 Profile
               </span>
             </h1>
-            <motion.div className="z-50 mt-3 overflow-hidden rounded-lg bg-[#eeeffc] py-4 pl-5 pr-5 text-xs text-gray-400 dark:bg-[#19223c] sm:text-sm md:py-5 md:pl-7 md:pr-14 lg:mt-5 lg:text-base">
+            <motion.div className="z-50 mt-3 overflow-hidden rounded-xl bg-gray-100 py-4 pl-5 pr-5 text-xs text-gray-500 dark:bg-secondary dark:text-gray-400 sm:text-sm md:py-5 md:pl-7 md:pr-14 lg:mt-5 lg:text-base">
               <PortableText value={hero.desc} />
             </motion.div>
           </div>

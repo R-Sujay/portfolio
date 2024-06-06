@@ -38,6 +38,19 @@ export default defineType({
     }),
 
     defineField({
+      name: "linkedinURL",
+      title: "Linkedin URL",
+      type: "url",
+    }),
+
+    defineField({
+      name: "dateOfBirth",
+      title: "Date of Birth",
+      type: "date",
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
       name: "desc",
       title: "Description",
       type: "array",

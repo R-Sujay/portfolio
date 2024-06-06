@@ -10,7 +10,7 @@
   z-index: 1;
   background-color: transparent;
   top: 19px;
-  left: 3px;
+  left: 2px;
   width: 20px;
   transform: rotate(45deg);
 }
@@ -19,9 +19,8 @@
 }
 .left-arm:after {
   content: "";
-  background-color: rgb(99 102 241);
   width: 20px;
-  height: 1px;
+  height: 2px;
   display: block;
   border-radius: 1px;
   transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);
@@ -33,7 +32,7 @@
   z-index: 1;
   background-color: transparent;
   top: 19px;
-  left: 17px;
+  left: 15px;
   width: 20px;
   transform: rotate(-45deg);
   border-radius: 2px;
@@ -43,9 +42,8 @@
 }
 .right-arm:after {
   content: "";
-  background-color: rgb(99 102 241);
   width: 20px;
-  height: 1px;
+  height: 2px;
   display: block;
   border-radius: 1px;
   transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);

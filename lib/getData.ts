@@ -14,7 +14,9 @@ async function getData() {
   skills,
   tags,
   "resumePdf": resumePdf.asset->url,
-  email
+  email,
+  dateOfBirth,
+  linkedinURL
 }`,
   );
 

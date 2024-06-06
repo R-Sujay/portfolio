@@ -44,6 +44,8 @@ interface HeroType {
   desc: SanityBlock[];
   tags: string[];
   email: string;
+  dateOfBirth: string;
+  linkedinURL: string;
 }
 
 interface ServicesType {

@@ -45,16 +45,18 @@ function Services({ services }: Props) {
 
   return (
     <motion.div
-      className="container relative flex flex-col items-center justify-between space-x-3 bg-indigo-100/40 px-0 pb-14 pr-3 dark:bg-[#19223c] sm:flex-row md:space-x-5 md:pr-5 lg:space-x-4 lg:pb-0 lg:pr-4 xl:space-x-5 xl:pr-5"
+      className="container relative flex flex-col items-center justify-between space-x-3 bg-gray-100/60 px-0 pb-14 pr-3 dark:bg-secondary sm:flex-row md:space-x-5 md:pr-5 lg:space-x-4 lg:pb-0 lg:pr-4 xl:space-x-5 xl:pr-5"
       id="services"
       ref={ref}
     >
-      <div className="flex max-h-[250px] w-full items-center justify-center sm:absolute sm:top-5 md:max-h-[300px] lg:relative lg:h-[60vh] lg:w-[30%] lg:rounded-r-full lg:bg-white lg:shadow-lg lg:dark:bg-[#13192d] xl:relative xl:w-[35%] xl:pl-0">
+      <div className="lg:dark:bg-dark flex max-h-[250px] w-full items-center justify-center sm:absolute sm:top-5 md:max-h-[300px] lg:relative lg:h-[60vh] lg:w-[30%] lg:rounded-r-full lg:bg-white lg:shadow-lg xl:relative xl:w-[35%] xl:pl-0">
+        <div className="dark:bg-dark absolute -left-2 hidden h-full w-10 bg-white xl:block" />
+
         <BarLoader className="mb-10 hidden w-16 lg:block xl:mb-0 xl:w-auto" />
         <div className="text-center lg:text-left">
           {/* <h1 className="text-3xl font-bold text-gray-500 md:text-4xl"> */}
-          <h1 className="text-3xl font-bold text-gray-500 md:text-4xl lg:text-3xl xl:text-4xl">
-            Top <span className="text-indigo-500">Services</span>
+          <h1 className="dark:text-darkGrey text-3xl font-bold text-gray-500 md:text-4xl lg:text-3xl xl:text-4xl">
+            Top <span className="text-black dark:text-white">Services</span>
           </h1>
           <h1 className="mt-3 w-[90%] text-xs text-gray-400 md:text-sm xl:w-[70%]">
             {services.desc}
@@ -65,11 +67,11 @@ function Services({ services }: Props) {
       {data.map((item, i) => (
         <div
           key={i}
-          className="mx-auto mt-5 h-[60vh] max-h-[250px] max-w-sm flex-1 rounded-3xl bg-white px-3 pb-5 pt-3 text-[#313e64] dark:bg-[#13192d] sm:mt-24 sm:max-w-max sm:px-3 sm:py-3 md:mt-28 md:max-h-[300px] lg:mt-0 xl:px-5"
+          className="dark:bg-dark mx-auto mt-5 h-[60vh] max-h-[250px] max-w-sm flex-1 rounded-3xl bg-white px-3 pb-5 pt-3 text-black shadow-md dark:text-white sm:mt-24 sm:max-w-max sm:px-3 sm:py-3 md:mt-28 md:max-h-[300px] lg:mt-0 xl:px-5"
         >
           <div className="h-[31%]">{item.Icon}</div>
           <div className="px-3">
-            <h1 className="font-code text-lg leading-6 tracking-wide text-gray-100 sm:w-[81%] sm:text-lg md:text-2xl lg:w-[89%] xl:w-full xl:text-[26px] xl:leading-8 xl:tracking-widest">
+            <h1 className="font-code text-lg leading-6 tracking-wide text-black dark:text-white sm:w-[81%] sm:text-lg md:text-2xl lg:w-[89%] xl:w-full xl:text-[26px] xl:leading-8 xl:tracking-widest">
               {item.title}
             </h1>
             <p className="mt-2 text-sm text-gray-400">{item.desc}</p>

@@ -6,6 +6,7 @@ import { Poppins } from "next/font/google";
 import { Children } from "@/typings";
 import { cookies } from "next/headers";
 import { getTheme } from "./actions";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Sujay Rajesh",
@@ -19,6 +20,7 @@ export default async function RootLayout({ children }: Children) {
   return (
     <html lang="en">
       <body className="dark">
+        <Toaster />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

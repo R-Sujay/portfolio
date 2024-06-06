@@ -38,7 +38,9 @@ function Skills({ skills, desc }: Props) {
       <div className="relative mb-10 flex items-center px-10 pr-2 lg:mb-0 lg:w-[30%]">
         <BarLoader className="hidden lg:block" />
         <div className="text-4xl font-bold">
-          <h1 className="text-center text-indigo-500 lg:text-left">Skills</h1>
+          <h1 className="text-center text-black dark:text-white lg:text-left">
+            Skills
+          </h1>
           <h1 className="text-center text-sm font-normal text-gray-400 lg:text-left">
             {desc}
           </h1>

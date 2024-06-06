@@ -29,13 +29,16 @@ function Header() {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-[100] flex h-[13vh] max-h-[13vh] min-h-[75px] w-screen items-center justify-center bg-white dark:bg-[#13192d]`}
+      className={`dark:bg-dark fixed left-0 top-0 z-[100] flex h-[13vh] max-h-[13vh] min-h-[75px] w-screen items-center justify-center bg-white`}
       id="header"
     >
       <div className="flex w-full items-center justify-between px-5 lg:max-w-7xl lg:px-10 2xl:px-0">
         {/* Logo */}
-        <Link href="#about" className="rounded-xl bg-indigo-500 p-2 text-white">
-          <HiAcademicCap className="h-7 w-7" />
+        <Link
+          href="#about"
+          className="rounded-xl bg-black p-2 text-white dark:bg-secondary"
+        >
+          <HiAcademicCap className="h-7 w-7 text-white dark:text-white" />
         </Link>
 
         {/* items */}
@@ -49,13 +52,13 @@ function Header() {
         <div className="z-50 flex items-center space-x-5">
           <Link
             href="#footer"
-            className="hidden cursor-pointer rounded-xl bg-indigo-600 px-4 py-2 font-semibold text-white md:block"
+            className="hidden cursor-pointer rounded-xl bg-black px-4 py-2 font-semibold text-white dark:bg-secondary dark:text-white md:block"
           >
             Contact
           </Link>
           <HeaderButton />
           <button className="z-50 hidden cursor-pointer sm:block">
-            <BsFillSunFill className="h-8 w-8 text-indigo-600" />
+            <BsFillSunFill className="h-8 w-8 text-black dark:text-white" />
           </button>
         </div>
       </div>

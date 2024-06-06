@@ -12,7 +12,7 @@ export default async function Home() {
   const { hero, skills, services, projects } = await getData();
 
   return (
-    <main className="relative z-10 h-screen w-full overflow-x-hidden scroll-smooth font-poppins transition-colors  scrollbar-hide dark:bg-[#13192d] lg:snap-y lg:snap-mandatory lg:pb-28">
+    <main className="dark:bg-dark relative z-10 h-screen w-full overflow-x-hidden scroll-smooth font-poppins  transition-colors scrollbar-hide lg:snap-y lg:snap-mandatory lg:pb-28">
       <Header />
 
       <Hero hero={hero} />
