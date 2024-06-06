@@ -19,7 +19,7 @@ export default async function RootLayout({ children }: Children) {
 
   return (
     <html lang="en">
-      <body className="dark">
+      <body className="">
         <Toaster />
         <ThemeProvider>{children}</ThemeProvider>
       </body>

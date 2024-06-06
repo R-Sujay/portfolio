@@ -35,9 +35,10 @@ function Projects({ projects }: Props) {
           <div className="flex w-full flex-col items-center justify-between space-y-3 text-center md:absolute md:w-[44%] md:items-start md:py-10 md:text-left">
             <div>
               <h1 className="dark:text-darkGrey text-xs font-semibold text-gray-500">
-                Latest Project <span className="text-white">#{i + 1}</span>
+                Latest Project{" "}
+                <span className="text-black dark:text-white">#{i + 1}</span>
               </h1>
-              <h1 className="text-4xl font-semibold text-white">
+              <h1 className="text-4xl font-semibold text-black dark:text-white">
                 {item.title}
               </h1>
             </div>

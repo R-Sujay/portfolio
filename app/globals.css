@@ -10,13 +10,13 @@
     @apply h-full w-full bg-black transition-colors dark:bg-white;
   }
   .container {
-    @apply mx-auto mt-[13.1vh] max-w-7xl snap-end snap-always px-10 pt-5 sm:px-0 lg:h-[87vh] lg:max-h-[87vh] xl:px-0;
+    @apply custombp:lg:h-[87vh] custombp:lg:max-h-[87vh] mx-auto mt-[13.1vh] max-w-7xl snap-end snap-always px-10 pt-5 sm:px-0 lg:min-h-[600px] xl:px-0;
   }
   .footerHeader {
     @apply font-code text-2xl font-bold text-black dark:text-white;
   }
   .footerStatus {
-    @apply text-darkGrey;
+    @apply dark:text-darkGrey text-gray-500;
   }
   .hero_imageBorder {
     @apply absolute hidden rounded-full border border-slate-400 dark:border-slate-600 sm:block;
