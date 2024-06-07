@@ -1,35 +1,15 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { HiAcademicCap } from "react-icons/hi";
-import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
 import HeaderItem from "./HeaderItem";
 import items from "@/HeaderItemsData";
-import { getTheme } from "@/utils/getTheme";
-import { setTheme } from "@/utils/setTheme";
 import HeaderButton from "./HeaderButton";
-import { useScrollIntoViewHandler } from "@/hooks/useScrollIntoViewHandler";
 import Link from "next/link";
+import ThemeSwitch from "./ThemeSwitch";
 
 function Header() {
-  // const theme = await getTheme();
-  // const changeTheme = async () =>
-  // await setTheme(theme === "light" ? "dark" : "light");
-  // const { selectItem } = useScrollIntoViewHandler();
-  const [shouldScroll, setShouldScroll] = useState(false);
-
-  useEffect(() => {
-    if (shouldScroll) {
-      // window.scrollTo(0, document.documentElement.scrollHeight);
-      const element = document.documentElement || document.body;
-      element.scrollTop = element.scrollHeight - element.clientHeight;
-      setShouldScroll(false); // Reset after scrolling
-    }
-  }, [shouldScroll]);
-
   return (
     <header
-      className={`dark:bg-dark fixed left-0 top-0 z-[100] flex h-[13vh] max-h-[13vh] min-h-[75px] w-screen items-center justify-center bg-white`}
+      className={`fixed left-0 top-0 z-[100] flex h-[13vh] max-h-[13vh] min-h-[75px] w-screen items-center justify-center bg-white dark:bg-dark`}
       id="header"
     >
       <div className="flex w-full items-center justify-between px-5 lg:max-w-7xl lg:px-10 2xl:px-0">
@@ -52,14 +32,13 @@ function Header() {
         <div className="z-50 flex items-center space-x-5">
           <Link
             href="#footer"
-            className="hidden cursor-pointer rounded-xl bg-black px-4 py-2 font-semibold text-white dark:bg-secondary dark:text-white md:block"
+            className="hidden cursor-pointer rounded-xl bg-black px-4 py-2 font-semibold text-white dark:bg-secondary md:block"
           >
             Contact
           </Link>
           <HeaderButton />
-          <button className="z-50 hidden cursor-pointer sm:block">
-            <BsFillSunFill className="h-8 w-8 text-black dark:text-white" />
-          </button>
+
+          <ThemeSwitch className="z-50 hidden h-8 w-8 cursor-pointer sm:block" />
         </div>
       </div>
     </header>

@@ -19,8 +19,6 @@ function NextBtn() {
       selected === lastArrayIndex ? items[0] : searchResults;
 
     if (nextSelectedItem) {
-      console.log(nextSelectedItem);
-
       selectItem(nextSelectedItem.text, nextSelectedItem.id);
     }
   };
@@ -28,14 +26,14 @@ function NextBtn() {
   return (
     <div
       onClick={item}
-      className="fixed left-[50%] right-[50%] top-[85%] z-[100] animate-spinBounce delay-700 dark:mix-blend-exclusion"
+      className="fixed left-[50%] right-[50%] top-[85%] z-[100] animate-spinBounce delay-700"
     >
-      <a className="slide-btn group h-10 w-10">
+      <a className="slide-btn group h-10 w-10 bg-white dark:bg-transparent">
         <span
-          className={`left-arm after:bg-black dark:after:bg-white ${selected === lastArrayIndex ? "top-left-arm" : ""}`}
+          className={`left-arm after:bg-black dark:after:bg-darkGrey ${selected === lastArrayIndex ? "top-left-arm" : ""}`}
         />
         <span
-          className={`right-arm after:bg-black dark:after:bg-white ${selected === lastArrayIndex ? "top-right-arm" : ""}`}
+          className={`right-arm after:bg-black dark:after:bg-darkGrey ${selected === lastArrayIndex ? "top-right-arm" : ""}`}
         />
         <span className="slide-main" />
       </a>

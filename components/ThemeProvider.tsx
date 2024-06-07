@@ -1,22 +1,29 @@
 "use client";
 
-import { changeTheme } from "@/app/actions";
-import { useGetState } from "@/atoms/darkModeAtom";
+import { themeAtom } from "@/atoms/Theme";
 import { Children } from "@/typings";
-import React from "react";
-import { RecoilRoot } from "recoil";
+import React, { useEffect, useRef } from "react";
+import { RecoilRoot, useRecoilValue } from "recoil";
+
+function Provider({ children }: Children) {
+  const theme = useRecoilValue<string>(themeAtom);
+  const mainRef = useRef<null | any>(null);
+
+  useEffect(() => {
+    if (theme.valueOf() === "dark") {
+      mainRef?.current.classList.add("dark");
+    } else {
+      mainRef?.current.classList.remove("dark");
+    }
+  }, [theme, mainRef]);
+
+  return <div ref={mainRef}>{children}</div>;
+}
 
 export function ThemeProvider({ children }: Children) {
-  // const { theme } = useGetState();
-  // create("dark");
-
   return (
     <RecoilRoot>
-      <div
-      // className={`bg-white dark:bg-[#13192d] ${theme === "dark" ? "dark" : "light"}`}
-      >
-        {children}
-      </div>
+      <Provider>{children}</Provider>
     </RecoilRoot>
   );
 }

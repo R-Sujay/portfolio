@@ -10,13 +10,13 @@
     @apply h-full w-full bg-black transition-colors dark:bg-white;
   }
   .container {
-    @apply custombp:lg:h-[87vh] custombp:lg:max-h-[87vh] mx-auto mt-[13.1vh] max-w-7xl snap-end snap-always px-10 pt-5 sm:px-0 lg:min-h-[600px] xl:px-0;
+    @apply mx-auto mt-[13.1vh] max-w-7xl snap-end snap-always px-10 pt-5 sm:px-0 lg:min-h-[600px] xl:px-0 custombp:lg:h-[87vh] custombp:lg:max-h-[87vh];
   }
   .footerHeader {
     @apply font-code text-2xl font-bold text-black dark:text-white;
   }
   .footerStatus {
-    @apply dark:text-darkGrey text-gray-500;
+    @apply text-gray-500 dark:text-darkGrey;
   }
   .hero_imageBorder {
     @apply absolute hidden rounded-full border border-slate-400 dark:border-slate-600 sm:block;
@@ -25,13 +25,13 @@
     @apply !flex items-center justify-center rounded-full text-indigo-500;
   }
   .slide-btn {
-    @apply relative block cursor-pointer overflow-hidden border-2 border-black transition-all duration-500 dark:border-white dark:text-white;
+    @apply relative block cursor-pointer overflow-hidden border-2 border-black transition-all duration-500 dark:border-darkGrey dark:text-darkGrey;
   }
   .slide-main {
-    @apply absolute -top-full left-0 z-0 block h-full w-[103%] bg-black group-hover:translate-y-[200%] group-hover:duration-500 group-hover:ease-in-out dark:bg-white;
+    @apply absolute -top-full left-0 z-0 block h-full w-[103%] bg-black group-hover:translate-y-[200%] group-hover:duration-500 group-hover:ease-in-out dark:bg-darkGrey;
   }
   .input {
-    @apply dark:bg-dark placeholder:text-darkGrey w-full resize-none rounded-3xl px-4 font-medium outline-4 placeholder:font-semibold focus:outline focus:outline-black dark:text-white dark:focus:outline-[#3d3d3d];
+    @apply w-full resize-none rounded-3xl px-4 font-medium outline-4 placeholder:font-semibold placeholder:text-darkGrey focus:outline focus:outline-black dark:bg-dark dark:text-white dark:focus:outline-[#3d3d3d];
   }
   .inputError {
     @apply outline outline-2 outline-red-600 focus:outline-red-600;

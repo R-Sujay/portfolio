@@ -11,6 +11,9 @@ import { useSelectorHandler } from "@/hooks/useSelectorHandler";
 import { useScrollIntoViewHandler } from "@/hooks/useScrollIntoViewHandler";
 import Link from "next/link";
 import toast from "react-hot-toast";
+import { getCookie } from "cookies-next";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { themeAtom } from "@/atoms/Theme";
 
 interface Props {
   hero: HeroType;
@@ -20,7 +23,7 @@ function Hero({ hero }: Props) {
   const ref = useRef(null);
   const placeholderText = [{ type: "heading1", text: hero.name }];
   const { selectItem } = useScrollIntoViewHandler();
-  const dark = true;
+  const theme = useRecoilValue(themeAtom);
 
   useSelectorHandler(ref, 0);
 
@@ -31,32 +34,51 @@ function Hero({ hero }: Props) {
       ref={ref}
     >
       <div className="relative w-[90%] flex-col items-center justify-center text-center sm:w-auto lg:w-[45%] lg:pt-0 lg:text-left xl:w-[50%]">
-        <h1 className="text-darkGrey text-2xl font-semibold">Hi, I'm</h1>
-        <motion.div
-          className="App"
-          initial="hidden"
-          animate={"visible"}
-          variants={{
-            visible: {
-              transition: {
-                staggerChildren: 0.025,
+        <h1 className="text-2xl font-semibold text-darkGrey">Hi, I'm</h1>
+        {theme === "dark" ? (
+          <motion.div
+            className="App"
+            initial="hidden"
+            animate={"visible"}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.025,
+                },
               },
-            },
-          }}
-        >
-          {placeholderText.map((item, index) => {
-            return (
-              <AnimateText
-                {...item}
-                key={index}
-                hiddenColor="#d946ef"
-                visibleColor={dark ? "#ffffff" : "#000000"}
-                className="text-[40px] font-semibold sm:text-6xl"
-              />
-            );
-          })}
-        </motion.div>
-        <p className="dark:text-darkGrey mx-auto mb-5 mt-0 max-w-lg flex-row font-code text-base text-gray-500 sm:mx-0 sm:mt-1 lg:mb-4 lg:mt-0">
+            }}
+          >
+            <AnimateText
+              {...placeholderText[0]}
+              hiddenColor="#000000"
+              visibleColor="#ffffff"
+              className="text-[40px] font-semibold sm:text-6xl"
+            />
+          </motion.div>
+        ) : (
+          <motion.div
+            className="App"
+            initial="hidden"
+            animate={"visible"}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.025,
+                },
+              },
+            }}
+          >
+            <p className="text-[1px] text-white">dd</p>
+            <AnimateText
+              {...placeholderText[0]}
+              hiddenColor="#ffffff"
+              visibleColor="#000000"
+              className="text-[40px] font-semibold sm:text-6xl"
+            />
+          </motion.div>
+        )}
+
+        <p className="mx-auto mb-5 mt-0 max-w-lg flex-row font-code text-base text-gray-500 dark:text-darkGrey sm:mx-0 sm:mt-1 lg:mb-4 lg:mt-0">
           {"<"}
           <span className="text-black dark:text-white">sujay</span>
           {">"}
@@ -103,7 +125,7 @@ function Hero({ hero }: Props) {
         <div className="absolute -left-[25px] -top-6 -z-10 h-[280px] w-[280px] overflow-hidden rounded-full sm:-bottom-16 sm:left-[3%] sm:h-[350px] sm:w-[350px] lg:left-[9%] lg:top-5 lg:h-[450px] lg:w-[450px] xl:left-[10%]">
           <div className="relative flex h-full w-full items-center justify-center">
             <div className="absolute -z-10 h-full w-full bg-black dark:bg-secondary" />
-            <div className="dark:bg-dark h-[91%] w-[91%] rounded-full bg-white sm:h-[82%] sm:w-[82%]" />
+            <div className="h-[91%] w-[91%] rounded-full bg-white dark:bg-dark sm:h-[82%] sm:w-[82%]" />
           </div>
         </div>
       </div>

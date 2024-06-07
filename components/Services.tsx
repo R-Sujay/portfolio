@@ -49,13 +49,13 @@ function Services({ services }: Props) {
       id="services"
       ref={ref}
     >
-      <div className="lg:dark:bg-dark flex max-h-[250px] w-full items-center justify-center sm:absolute sm:top-5 md:max-h-[300px] lg:relative lg:h-[60vh] lg:w-[30%] lg:rounded-r-full lg:bg-white lg:shadow-lg xl:relative xl:w-[35%] xl:pl-0">
-        <div className="dark:bg-dark absolute -left-2 hidden h-full w-10 bg-white xl:block" />
+      <div className="flex max-h-[250px] w-full items-center justify-center sm:absolute sm:top-5 md:max-h-[300px] lg:relative lg:h-[60vh] lg:w-[30%] lg:rounded-r-full lg:bg-white lg:shadow-lg lg:dark:bg-dark xl:relative xl:w-[35%] xl:pl-0">
+        <div className="absolute -left-2 hidden h-full w-10 bg-white dark:bg-dark xl:block" />
 
         <BarLoader className="mb-10 hidden w-16 lg:block xl:mb-0 xl:w-auto" />
         <div className="text-center lg:text-left">
           {/* <h1 className="text-3xl font-bold text-gray-500 md:text-4xl"> */}
-          <h1 className="dark:text-darkGrey text-3xl font-bold text-gray-500 md:text-4xl lg:text-3xl xl:text-4xl">
+          <h1 className="text-3xl font-bold text-gray-500 dark:text-darkGrey md:text-4xl lg:text-3xl xl:text-4xl">
             Top <span className="text-black dark:text-white">Services</span>
           </h1>
           <h1 className="mt-3 w-[90%] text-xs text-gray-400 md:text-sm xl:w-[70%]">
@@ -67,7 +67,7 @@ function Services({ services }: Props) {
       {data.map((item, i) => (
         <div
           key={i}
-          className="dark:bg-dark mx-auto mt-5 h-[60vh] max-h-[250px] max-w-sm flex-1 rounded-3xl bg-white px-3 pb-5 pt-3 text-black shadow-md dark:text-white sm:mt-24 sm:max-w-max sm:px-3 sm:py-3 md:mt-28 md:max-h-[300px] lg:mt-0 xl:px-5"
+          className="mx-auto mt-5 h-[60vh] max-h-[250px] max-w-sm flex-1 rounded-3xl bg-white px-3 pb-5 pt-3 text-black shadow-md dark:bg-dark dark:text-white sm:mt-24 sm:max-w-max sm:px-3 sm:py-3 md:mt-28 md:max-h-[300px] lg:mt-0 xl:px-5"
         >
           <div className="h-[31%]">{item.Icon}</div>
           <div className="px-3">

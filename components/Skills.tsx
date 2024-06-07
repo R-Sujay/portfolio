@@ -8,6 +8,9 @@ import { SkillType } from "@/typings";
 import { urlForImage } from "@/sanity/lib/asset";
 import BarLoader from "./BarLoader";
 import { useSelectorHandler } from "@/hooks/useSelectorHandler";
+import { getCookie } from "cookies-next";
+import { useRecoilValue } from "recoil";
+import { themeAtom } from "@/atoms/Theme";
 
 interface Props {
   skills: SkillType;
@@ -15,7 +18,7 @@ interface Props {
 }
 
 function Skills({ skills, desc }: Props) {
-  const dark = true;
+  const theme = useRecoilValue(themeAtom);
   const ref = useRef(null);
   const skillArr = splitArray();
 
@@ -57,7 +60,9 @@ function Skills({ skills, desc }: Props) {
               >
                 <Image
                   src={urlForImage(
-                    skill.dark !== null && dark ? skill.dark : skill.light,
+                    skill.dark !== null && theme === "dark"
+                      ? skill.dark
+                      : skill.light,
                   )}
                   alt=""
                   className="object-contain"

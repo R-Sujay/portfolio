@@ -24,14 +24,14 @@ function Profile({ hero }: Props) {
 
   return (
     <motion.div
-      className="container relative h-full max-w-4xl lg:h-[87vh] lg:max-h-[87vh]"
+      className="container relative h-min max-w-4xl sm:h-full lg:h-[87vh] lg:max-h-[87vh]"
       id="profile"
       ref={ref}
     >
       <div className="flex h-full w-full items-center justify-center">
         <div className="flex h-full w-full flex-col items-center justify-between sm:max-h-[330px] sm:flex-row lg:max-h-96">
           <div className="relative flex h-full flex-col sm:w-[68%] sm:justify-between sm:pl-7 md:w-[65%] lg:pl-0">
-            <h1 className="dark:text-darkGrey mx-auto flex text-3xl font-semibold text-gray-500 sm:mx-0 lg:text-4xl">
+            <h1 className="mx-auto flex text-3xl font-semibold text-gray-500 dark:text-darkGrey sm:mx-0 lg:text-4xl">
               My
               <span className="pl-2 font-semibold text-black dark:text-white">
                 Profile
@@ -43,7 +43,7 @@ function Profile({ hero }: Props) {
           </div>
 
           <div className="relative z-50 hidden h-full w-full flex-1 sm:block">
-            <div className="-bottom-5 -left-5 h-[300px] w-[100%] sm:absolute md:-left-10 md:bottom-0 lg:-left-14 lg:bottom-4">
+            <div className="absolute -bottom-5 -left-5 h-[300px] w-[100%] md:-left-10 md:bottom-0 lg:-left-14 lg:bottom-4">
               <Image
                 src={urlForImage(hero.secProfile)}
                 alt=""

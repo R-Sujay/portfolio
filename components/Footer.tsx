@@ -59,11 +59,11 @@ function Footer({ hero }: Props) {
   return (
     <div
       id="footer"
-      className=":px-10 container mt-0 !h-max max-h-none max-w-full snap-none bg-gray-100 px-2 dark:bg-secondary lg:px-5"
+      className="container mt-0 !h-max max-h-none max-w-full snap-none bg-gray-100 px-2 dark:bg-secondary md:px-5"
     >
       <div className="mx-auto flex h-full w-full max-w-4xl flex-col items-center justify-between md:flex-row">
         <div className="flex flex-col justify-center space-y-2 text-center md:text-left">
-          <h1 className="text-center font-code text-3xl font-bold text-indigo-500 md:hidden">
+          <h1 className="text-center font-code text-3xl font-bold text-black dark:text-white md:hidden">
             Let's Talk.
           </h1>
           <div className="">
@@ -150,7 +150,7 @@ function Footer({ hero }: Props) {
 
           <div className="flex w-full items-center justify-between space-x-1 xs:space-x-2 sm:space-x-4">
             <button
-              className="dark:bg-dark w-1/2 rounded-2xl bg-black py-3 text-xl font-semibold text-white md:w-full"
+              className="w-1/2 rounded-2xl bg-black py-3 text-xl font-semibold text-white dark:bg-dark md:w-full"
               type="submit"
               disabled={loading}
             >
@@ -159,7 +159,7 @@ function Footer({ hero }: Props) {
             <Link
               href={hero.resumePdf}
               target="_blank"
-              className="w-1/2 rounded-2xl border border-indigo-500 py-3 text-center text-xl font-semibold text-indigo-500 md:hidden"
+              className="w-1/2 rounded-2xl border border-black py-3 text-center text-xl font-semibold dark:border-white dark:text-white md:hidden"
             >
               View Resume
             </Link>

@@ -42,8 +42,6 @@ function HeaderItem({ item }: Props) {
   //   return () => observer.disconnect(); // Cleanup on unmount
   // }, [divRef.current]);
 
-  console.log(selected, item);
-
   return (
     <li
       className="relative flex flex-shrink-0 cursor-pointer items-center justify-center rounded-3xl px-0.5 lg:mx-0 lg:h-14 lg:px-2"
