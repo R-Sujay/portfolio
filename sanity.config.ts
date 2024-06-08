@@ -6,6 +6,7 @@ import { structureTool } from "sanity/structure";
 import { theme } from "https://themer.sanity.build/api/hues?default=3b82f6;darkest:13192d";
 import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schema, singletonTypes } from "./sanity/schema";
+import { inlineSvgInput } from "@focus-reactive/sanity-plugin-inline-svg-input";
 
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);
 
@@ -46,6 +47,7 @@ export default defineConfig({
     // Vision is a tool that lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
+    inlineSvgInput(),
   ],
 
   document: {

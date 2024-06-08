@@ -9,6 +9,7 @@ import { ServicesType } from "@/typings";
 import "ldrs/lineWobble";
 import BarLoader from "./BarLoader";
 import { useSelectorHandler } from "@/hooks/useSelectorHandler";
+import { InlineSvgPreviewComponent } from "@focus-reactive/sanity-plugin-inline-svg-input";
 
 interface Props {
   services: ServicesType;
@@ -19,29 +20,23 @@ function Services({ services }: Props) {
 
   useSelectorHandler(ref, 3);
 
-  const data = [
-    {
-      Icon: (
-        <HiSquaresPlus className="ml-1 h-[70px] w-[60px] sm:h-[65px] sm:w-[60px] md:h-[80px] md:w-[75px]" />
-      ),
-      title: "Mobile App Design",
-      desc: services.mobile,
-    },
-    {
-      Icon: (
-        <MdPhonelink className="h-[66px] w-[73px] pl-3 sm:mb-10 md:h-[80px] md:w-[87px]" />
-      ),
-      title: "Responsive Web Website",
-      desc: services.web,
-    },
-    {
-      Icon: (
-        <RiDashboardHorizontalFill className="h-[70px] w-[60px] pl-2 sm:h-[65px] sm:w-[70px] md:h-[80px] md:w-[75px] md:pl-0" />
-      ),
-      title: "Dashboard Design",
-      desc: services.dashboard,
-    },
-  ];
+  // const Icons = [
+  //   {
+  //     Icon: (
+  //       <HiSquaresPlus className="ml-1 h-[70px] w-[60px] sm:h-[65px] sm:w-[60px] md:h-[80px] md:w-[75px]" />
+  //     ),
+  //   },
+  //   {
+  //     Icon: (
+  //       <MdPhonelink className="h-[66px] w-[73px] pl-3 sm:mb-10 md:h-[80px] md:w-[87px]" />
+  //     ),
+  //   },
+  //   {
+  //     Icon: (
+  //       <RiDashboardHorizontalFill className="h-[70px] w-[60px] pl-2 sm:h-[65px] sm:w-[70px] md:h-[80px] md:w-[75px] md:pl-0" />
+  //     ),
+  //   },
+  // ];
 
   return (
     <motion.div
@@ -64,12 +59,17 @@ function Services({ services }: Props) {
         </div>
       </div>
 
-      {data.map((item, i) => (
+      {services.serviceItems.map((item, i) => (
         <div
           key={i}
           className="mx-auto mt-5 h-[60vh] max-h-[250px] max-w-sm flex-1 rounded-3xl bg-white px-3 pb-5 pt-3 text-black shadow-md dark:bg-dark dark:text-white sm:mt-24 sm:max-w-max sm:px-3 sm:py-3 md:mt-28 md:max-h-[300px] lg:mt-0 xl:px-5"
         >
-          <div className="h-[31%]">{item.Icon}</div>
+          <div className="h-[31%]">
+            <InlineSvgPreviewComponent
+              value={item.icon}
+              className={item.iconClassName}
+            />
+          </div>
           <div className="px-3">
             <h1 className="font-code text-lg leading-6 tracking-wide text-black dark:text-white sm:w-[81%] sm:text-lg md:text-2xl lg:w-[89%] xl:w-full xl:text-[26px] xl:leading-8 xl:tracking-widest">
               {item.title}

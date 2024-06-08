@@ -49,11 +49,14 @@ interface HeroType {
 }
 
 interface ServicesType {
-  web: string;
-  dashboard: string;
   _id: string;
   desc: string;
-  mobile: string;
+  serviceItems: {
+    icon: string;
+    iconClassName: string;
+    title: string;
+    desc: string;
+  }[];
 }
 
 type SkillType = {

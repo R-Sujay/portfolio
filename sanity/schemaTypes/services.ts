@@ -13,21 +13,37 @@ export default defineType({
     }),
 
     defineField({
-      name: "mobile",
-      title: "Mobile Design Desc",
-      type: "string",
+      name: "I",
+      title: "Service 1",
+      type: "object",
+      fields: [
+        { name: "title", title: "Title", type: "string" },
+        { name: "desc", title: "Desc", type: "string" },
+        { name: "iconClassName", title: "Icon ClassName", type: "string" },
+        { name: "icon", title: "Icon", type: "inlineSvg" },
+      ],
     }),
-
     defineField({
-      name: "web",
-      title: "Responsive Web Desc",
-      type: "string",
+      name: "II",
+      title: "Service 2",
+      type: "object",
+      fields: [
+        { name: "title", title: "Title", type: "string" },
+        { name: "desc", title: "Desc", type: "string" },
+        { name: "iconClassName", title: "Icon ClassName", type: "string" },
+        { name: "icon", title: "Icon", type: "inlineSvg" },
+      ],
     }),
-
     defineField({
-      name: "dashboard",
-      title: "Dashboard Design Desc",
-      type: "string",
+      name: "III",
+      title: "Service 3",
+      type: "object",
+      fields: [
+        { name: "title", title: "Title", type: "string" },
+        { name: "desc", title: "Desc", type: "string" },
+        { name: "iconClassName", title: "Icon ClassName", type: "string" },
+        { name: "icon", title: "Icon", type: "inlineSvg" },
+      ],
     }),
   ],
 });

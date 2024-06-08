@@ -1518,6 +1518,14 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.2.tgz"
   integrity sha512-J4yDIIthosAsRZ5CPYP/jQvUAQtlZTTD/4suA08/FEnlxqW3sKS9iAhgsa9VYLZ6vDHn/ixJgIqRQPotoBjxIw==
 
+"@focus-reactive/sanity-plugin-inline-svg-input@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@focus-reactive/sanity-plugin-inline-svg-input/-/sanity-plugin-inline-svg-input-1.0.1.tgz#f6fd54e20194803d4197f9247ac46eebbc450584"
+  integrity sha512-xg2jfLqwOSms6DJcxloxPRNEElZ1c0ExxQuKOBH68okPtlbWabao90AFfSUOzjPGkoyKBSJj76QTe8Zl59YMmg==
+  dependencies:
+    "@sanity/incompatible-plugin" "^1.0.4"
+    dompurify "^3.0.6"
+
 "@hookform/resolvers@^3.3.2":
   version "3.4.2"
   resolved "https://registry.npmjs.org/@hookform/resolvers/-/resolvers-3.4.2.tgz"
@@ -2136,6 +2144,11 @@
   resolved "https://registry.npmjs.org/@sanity/generate-help-url/-/generate-help-url-3.0.0.tgz"
   integrity sha512-wtMYcV5GIDIhVyF/jjmdwq1GdlK07dRL40XMns73VbrFI7FteRltxv48bhYVZPcLkRXb0SHjpDS/icj9/yzbVA==
 
+"@sanity/icons@^1.3":
+  version "1.3.10"
+  resolved "https://registry.yarnpkg.com/@sanity/icons/-/icons-1.3.10.tgz#df934a94ae6669fe6b15515d800afb221cba0498"
+  integrity sha512-5wVG/vIiGuGrSmq+Bl3PY7XDgQrGv0fyHdJI64FSulnr2wH3NMqZ6C59UFxnrZ93sr7kOt0zQFoNv2lkPBi0Cg==
+
 "@sanity/icons@^2.11.0", "@sanity/icons@^2.11.8":
   version "2.11.8"
   resolved "https://registry.npmjs.org/@sanity/icons/-/icons-2.11.8.tgz"
@@ -2172,6 +2185,14 @@
     rimraf "^3.0.2"
     split2 "^4.2.0"
     tar-fs "^2.1.1"
+
+"@sanity/incompatible-plugin@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@sanity/incompatible-plugin/-/incompatible-plugin-1.0.4.tgz#c369af3b629de6c01e5843373fb3ede9972a53f4"
+  integrity sha512-2z39G9PTM8MXOF4fJNx3TG4tH0RrTjtH6dVLW93DSjCPbIS7FgCY5yWjZfQ+HVkwhLsF7ATDAGLA/jp65pFjAg==
+  dependencies:
+    "@sanity/icons" "^1.3"
+    react-copy-to-clipboard "^5.1.0"
 
 "@sanity/logos@^2.1.4":
   version "2.1.11"
@@ -3857,6 +3878,11 @@ dom-walk@^0.1.0:
   version "0.1.2"
   resolved "https://registry.npmjs.org/dom-walk/-/dom-walk-0.1.2.tgz"
   integrity sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w==
+
+dompurify@^3.0.6:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-3.1.5.tgz#2c6a113fc728682a0f55684b1388c58ddb79dc38"
+  integrity sha512-lwG+n5h8QNpxtyrJW/gJWckL+1/DQiYMX8f7t8Z2AZTPw1esVrqjI63i7Zc2Gz0aKzLVMYC1V1PL/ky+aY/NgA==
 
 dot-prop@^5.2.0:
   version "5.3.0"
@@ -6709,7 +6735,7 @@ react-clientside-effect@^1.2.6:
   dependencies:
     "@babel/runtime" "^7.12.13"
 
-react-copy-to-clipboard@^5.0.4:
+react-copy-to-clipboard@^5.0.4, react-copy-to-clipboard@^5.1.0:
   version "5.1.0"
   resolved "https://registry.npmjs.org/react-copy-to-clipboard/-/react-copy-to-clipboard-5.1.0.tgz"
   integrity sha512-k61RsNgAayIJNoy9yDsYzDe/yAZAzEbEgcz3DZMhF686LEyukcE1hzurxe85JandPUG+yTfGVFzuEw3xt8WP/A==

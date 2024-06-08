@@ -88,10 +88,6 @@ function Footer({ hero }: Props) {
               {hero.linkedinURL}
             </Link>
           </div>
-          <div className="">
-            <h1 className="footerHeader">Date of Birth</h1>
-            <h1 className="footerStatus">{hero.dateOfBirth}</h1>
-          </div>
 
           <div className="hidden pt-5 md:block">
             <Link

@@ -15,7 +15,6 @@ async function getData() {
   tags,
   "resumePdf": resumePdf.asset->url,
   email,
-  dateOfBirth,
   linkedinURL
 }`,
   );
@@ -30,12 +29,10 @@ async function getData() {
   );
 
   const services: ServicesType = await client.fetch(
-    `*[_type == "services"][0] {
+    `*[ _type == "services"][0] {
   _id,
   desc,
-  mobile,
-  web,
-  dashboard,
+  "serviceItems": [I, II, III],
 }`,
   );
 
