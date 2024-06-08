@@ -9,19 +9,19 @@ import Skills from "@/components/Skills";
 import getData from "@/lib/getData";
 
 export default async function Home() {
-  const { hero, skills, services, projects } = await getData();
+  const { hero, skills, services, projects, profile } = await getData();
 
   return (
     <main className="relative z-10 h-screen w-full overflow-x-hidden scroll-smooth font-poppins transition-colors scrollbar-hide dark:bg-dark custombp:lg:snap-y custombp:lg:snap-mandatory custombp:lg:pb-28">
       <Header />
 
       <Hero hero={hero} />
-      <Profile hero={hero} />
+      <Profile profile={profile} />
       <Skills skills={skills} desc={hero.skills} />
       <Services services={services} />
       <Projects projects={projects} />
-
       <Footer hero={hero} />
+
       <NextBtn />
     </main>
   );

@@ -6,7 +6,7 @@ import { structureTool } from "sanity/structure";
 import { theme } from "https://themer.sanity.build/api/hues?default=3b82f6;darkest:13192d";
 import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schema, singletonTypes } from "./sanity/schema";
-import { inlineSvgInput } from "@focus-reactive/sanity-plugin-inline-svg-input";
+import { inlineSvgInput } from "./sanity/lib/sanitySVGPlugin";
 
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);
 
@@ -24,7 +24,6 @@ export default defineConfig({
         S.list()
           .title("Content")
           .items([
-            // Our singleton type has a list item with a custom child
             S.listItem()
               .title("Hero")
               .id("hero")
@@ -37,6 +36,11 @@ export default defineConfig({
                 S.document().schemaType("services").documentId("services"),
               ),
 
+            S.listItem()
+              .title("Profile")
+              .id("profile")
+              .child(S.document().schemaType("profile").documentId("profile")),
+
             // Regular document types
             S.documentTypeListItem("skills").title("Skills"),
             S.documentTypeListItem("projects").title("Projects"),
@@ -44,8 +48,6 @@ export default defineConfig({
           ]),
     }),
 
-    // Vision is a tool that lets you query your content with GROQ in the studio
-    // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
     inlineSvgInput(),
   ],

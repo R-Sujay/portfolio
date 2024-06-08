@@ -5,11 +5,12 @@ import { SchemaPluginOptions } from "sanity";
 import services from "./schemaTypes/services";
 import projects from "./schemaTypes/projects";
 import contact from "./schemaTypes/contact";
+import profile from "./schemaTypes/profile";
 
-export const singletonTypes = new Set(["hero", "services"]);
+export const singletonTypes = new Set(["hero", "services", "profile"]);
 
 export const schema: SchemaPluginOptions = {
-  types: [skills, hero, services, blockContent, projects, contact],
+  types: [skills, hero, services, blockContent, projects, contact, profile],
 
   templates: (templates) =>
     templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),

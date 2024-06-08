@@ -50,20 +50,6 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
 
-    defineField({
-      name: "desc",
-      title: "Description",
-      type: "array",
-      of: [
-        {
-          title: "Block",
-          type: "block",
-          styles: [{ title: "Normal", value: "normal" }],
-          lists: [],
-        },
-      ],
-    }),
-
     // Field with accept option set to PDF
     defineField({
       name: "resumePdf",

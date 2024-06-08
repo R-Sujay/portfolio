@@ -9,7 +9,7 @@ import { ServicesType } from "@/typings";
 import "ldrs/lineWobble";
 import BarLoader from "./BarLoader";
 import { useSelectorHandler } from "@/hooks/useSelectorHandler";
-import { InlineSvgPreviewComponent } from "@focus-reactive/sanity-plugin-inline-svg-input";
+import { InlineSvgPreviewComponent } from "@/sanity/lib/sanitySVGPlugin";
 
 interface Props {
   services: ServicesType;

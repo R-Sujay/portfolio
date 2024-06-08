@@ -48,6 +48,15 @@ interface HeroType {
   linkedinURL: string;
 }
 
+interface ProfileType {
+  _id: string;
+  desc: SanityBlock[];
+  services: {
+    icon: string;
+    title: string;
+  }[];
+}
+
 interface ServicesType {
   _id: string;
   desc: string;

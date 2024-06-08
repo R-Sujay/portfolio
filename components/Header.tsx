@@ -16,9 +16,9 @@ function Header() {
         {/* Logo */}
         <Link
           href="#about"
-          className="rounded-xl bg-black p-2 text-white dark:bg-secondary"
+          className="rounded-xl bg-black p-2 text-white dark:bg-secondary dark:text-white "
         >
-          <HiAcademicCap className="h-7 w-7 text-white dark:text-white" />
+          <HiAcademicCap className="h-7 w-7 " />
         </Link>
 
         {/* items */}
