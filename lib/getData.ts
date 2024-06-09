@@ -28,7 +28,7 @@ async function getData() {
   const profile: ProfileType = await client.fetch(
     `*[ _type == "profile"][0] {
   _id,
-  desc,
+  "desc": desc.asset->url,
   "services": [I, II, III, IV],
 }
 `,

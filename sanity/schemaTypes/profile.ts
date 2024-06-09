@@ -9,15 +9,10 @@ export default defineType({
     defineField({
       name: "desc",
       title: "Description",
-      type: "array",
-      of: [
-        {
-          title: "Block",
-          type: "block",
-          styles: [{ title: "Normal", value: "normal" }],
-          lists: [],
-        },
-      ],
+      type: "file",
+      options: {
+        accept: "application/json",
+      },
     }),
 
     defineField({

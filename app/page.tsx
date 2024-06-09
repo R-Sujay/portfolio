@@ -10,13 +10,16 @@ import getData from "@/lib/getData";
 
 export default async function Home() {
   const { hero, skills, services, projects, profile } = await getData();
+  const profileRes = await fetch(profile.desc, { cache: "force-cache" });
+  const profileData = await profileRes.json();
+  const profileDesc = JSON.stringify(profileData, null, "\t");
 
   return (
     <main className="relative z-10 h-screen w-full overflow-x-hidden scroll-smooth font-poppins transition-colors scrollbar-hide dark:bg-dark custombp:lg:snap-y custombp:lg:snap-mandatory custombp:lg:pb-28">
       <Header />
 
       <Hero hero={hero} />
-      <Profile profile={profile} />
+      <Profile desc={profileDesc} services={profile.services} />
       <Skills skills={skills} desc={hero.skills} />
       <Services services={services} />
       <Projects projects={projects} />

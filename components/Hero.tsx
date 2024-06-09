@@ -28,7 +28,7 @@ function Hero({ hero }: Props) {
   useSelectorHandler(ref, 0);
 
   return (
-    <motion.main
+    <motion.div
       className="container flex flex-col items-center px-0 sm:px-10 lg:flex-row lg:px-10"
       id="about"
       ref={ref}
@@ -129,7 +129,7 @@ function Hero({ hero }: Props) {
           </div>
         </div>
       </div>
-    </motion.main>
+    </motion.div>
   );
 }
 
