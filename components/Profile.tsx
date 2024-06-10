@@ -6,6 +6,9 @@ import { Service } from "@/typings";
 import { useSelectorHandler } from "@/hooks/useSelectorHandler";
 import ProfileItem from "./ProfileIcon";
 import Editor from "@monaco-editor/react";
+import { useRecoilValue } from "recoil";
+import { themeAtom } from "@/atoms/Theme";
+import toast from "react-hot-toast";
 
 interface Props {
   services: Service;
@@ -15,12 +18,13 @@ interface Props {
 function Profile({ services, desc }: Props) {
   const ref = useRef(null);
   const [firstHalf, secondHalf] = [services.slice(0, 2), services.slice(2)];
+  const theme = useRecoilValue(themeAtom);
 
   useSelectorHandler(ref, 1);
 
   return (
     <motion.div
-      className="container relative flex h-[600px] max-w-4xl items-start justify-center px-0 sm:px-10 lg:mb-0 lg:max-h-[87vh] lg:max-w-6xl lg:items-center"
+      className="container relative flex min-h-[600px] max-w-4xl items-start justify-center px-0 sm:px-10 lg:mb-0 lg:max-h-[87vh] lg:max-w-6xl lg:items-center"
       id="profile"
       ref={ref}
     >
@@ -33,7 +37,7 @@ function Profile({ services, desc }: Props) {
             </span>
           </h1>
 
-          <motion.div className="z-50 mt-10 overflow-hidden rounded-xl bg-secondary text-sm text-gray-500 lg:text-base">
+          <div className="z-50 mt-10 h-[160px] rounded-xl bg-gray-100 text-sm text-gray-500 dark:bg-secondary lg:text-base xl:h-[250px]">
             <div className="flex items-center justify-start space-x-2 py-3 pl-5">
               <div className="profileWindowCircles bg-[#e05545]" />
               <div className="profileWindowCircles bg-[#f2d74c]" />
@@ -41,12 +45,12 @@ function Profile({ services, desc }: Props) {
             </div>
             <Editor
               defaultLanguage="json"
-              theme="vs-dark"
+              theme={theme === "dark" ? "vs-dark" : "light"}
               defaultValue={desc}
               options={{ readOnly: true }}
-              className="z-50 h-full"
+              className="z-50 h-[200px] max-h-full xl:h-[250px]"
             />
-          </motion.div>
+          </div>
         </div>
 
         <div className="relative z-50 flex h-[150px] w-full justify-end font-semibold sm:w-[80%] sm:pl-6 lg:h-[350px] xl:w-min xl:pl-5">

@@ -6,10 +6,10 @@ import CircleLoader from "./CircleLoader";
 
 function Loading() {
   return (
-    <div className="flex h-screen items-center justify-center">
+    <div className="flex h-screen items-center justify-center bg-dark">
       <CircleLoader
-        meshColor={"#787575"}
-        lightColor={"#E0E7FF"}
+        meshColor={"#e8e8e8"}
+        lightColor={"#ffffff"}
         duration={1.5}
         desktopSize={"100%"}
         mobileSize={"64px"}

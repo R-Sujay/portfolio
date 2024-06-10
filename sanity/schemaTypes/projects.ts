@@ -30,6 +30,12 @@ export default defineType({
       ],
     }),
     defineField({
+      name: "isMobile",
+      title: "Is Mobile",
+      type: "boolean",
+      initialValue: false,
+    }),
+    defineField({
       name: "tech",
       title: "Tech Stack",
       type: "array",

@@ -16,31 +16,8 @@ interface Props {
 
 function HeaderItem({ item }: Props) {
   const selected = useRecoilValue(selectedAtom);
-  const [isSelecting, setIsSelecting] = useRecoilState(isSelectingAtom);
 
   const { selectItem } = useScrollIntoViewHandler();
-
-  // const divRef = useRef(null);
-  // const [isAnimating, setIsAnimating] = useState(false);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       const entry = entries[0];
-  //       if (!entry.isIntersecting) {
-  //         // Animation complete when not intersecting
-  //         console.log("starting or ending", isAnimating);
-  //       }
-  //     },
-  //     { threshold: 1 },
-  //   );
-
-  //   if (divRef.current) {
-  //     observer.observe(divRef.current);
-  //   }
-
-  //   return () => observer.disconnect(); // Cleanup on unmount
-  // }, [divRef.current]);
 
   return (
     <li

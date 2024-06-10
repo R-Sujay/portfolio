@@ -34,7 +34,7 @@ function Skills({ skills, desc }: Props) {
 
   return (
     <motion.div
-      className="container mt-20 flex flex-col items-center px-0 lg:mt-0 lg:flex-row lg:justify-between"
+      className="container mt-20 flex flex-col items-center px-0 lg:mt-[13.1vh] lg:flex-row lg:justify-between"
       id="skills"
       ref={ref}
     >

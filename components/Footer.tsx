@@ -6,6 +6,8 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
+import { themeAtom } from "@/atoms/Theme";
+import { useRecoilValue } from "recoil";
 
 interface Props {
   hero: HeroType;
@@ -13,6 +15,7 @@ interface Props {
 
 function Footer({ hero }: Props) {
   const [loading, setLoading] = useState(false);
+  const theme = useRecoilValue(themeAtom);
 
   const {
     handleSubmit,
@@ -33,8 +36,8 @@ function Footer({ hero }: Props) {
 
     const loginToast = toast.loading("Submitting...", {
       style: {
-        background: "#fff",
-        color: "#000",
+        background: theme === "light" ? "#fff" : "#272727",
+        color: theme === "light" ? "#000" : "#fff",
         fontFamily: "Poppins, sans-serif",
         fontWeight: 500,
       },

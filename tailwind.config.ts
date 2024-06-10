@@ -24,8 +24,8 @@ module.exports = {
     extend: {
       colors: {
         dark: "#181818",
-        darkGrey: "#aaaaaa",
         secondary: "#272727",
+        darkGrey: "#aaaaaa",
       },
       keyframes: {
         spinBounce: {

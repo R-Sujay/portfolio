@@ -8,6 +8,8 @@ export const useScrollIntoViewHandler = () => {
   const selectItem = (id: string, selectorId: number) => {
     setIsSelecting(true);
     const targetElement = document.getElementById(id.toLocaleLowerCase());
+    console.log(id);
+
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth" });
     }
