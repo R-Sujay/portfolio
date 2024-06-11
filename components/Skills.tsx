@@ -8,7 +8,6 @@ import { SkillType } from "@/typings";
 import { urlForImage } from "@/sanity/lib/asset";
 import BarLoader from "./BarLoader";
 import { useSelectorHandler } from "@/hooks/useSelectorHandler";
-import { getCookie } from "cookies-next";
 import { useRecoilValue } from "recoil";
 import { themeAtom } from "@/atoms/Theme";
 

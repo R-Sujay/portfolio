@@ -2,9 +2,10 @@
 
 import { themeAtom } from "@/atoms/Theme";
 import { Children } from "@/typings";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RecoilRoot, useRecoilValue } from "recoil";
 import Loading from "./Loading";
+import { Analytics } from "@vercel/analytics/react";
 
 function Provider({ children }: Children) {
   const theme = useRecoilValue<string>(themeAtom);
@@ -25,6 +26,7 @@ export function ThemeProvider({ children }: Children) {
   return (
     <RecoilRoot>
       <Provider>{children}</Provider>
+      {/* <Analytics mode={"production"} />; */}
     </RecoilRoot>
   );
 }
