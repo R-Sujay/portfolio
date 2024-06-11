@@ -26,7 +26,7 @@ export function ThemeProvider({ children }: Children) {
   return (
     <RecoilRoot>
       <Provider>{children}</Provider>
-      {/* <Analytics mode="production" /> */}
+      <Analytics mode="production" />
     </RecoilRoot>
   );
 }
