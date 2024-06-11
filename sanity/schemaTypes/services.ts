@@ -19,7 +19,6 @@ export default defineType({
       fields: [
         { name: "title", title: "Title", type: "string" },
         { name: "desc", title: "Desc", type: "string" },
-        { name: "iconClassName", title: "Icon ClassName", type: "string" },
         { name: "icon", title: "Icon", type: "inlineSvg" },
       ],
     }),
@@ -30,7 +29,6 @@ export default defineType({
       fields: [
         { name: "title", title: "Title", type: "string" },
         { name: "desc", title: "Desc", type: "string" },
-        { name: "iconClassName", title: "Icon ClassName", type: "string" },
         { name: "icon", title: "Icon", type: "inlineSvg" },
       ],
     }),
@@ -41,7 +39,6 @@ export default defineType({
       fields: [
         { name: "title", title: "Title", type: "string" },
         { name: "desc", title: "Desc", type: "string" },
-        { name: "iconClassName", title: "Icon ClassName", type: "string" },
         { name: "icon", title: "Icon", type: "inlineSvg" },
       ],
     }),

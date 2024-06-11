@@ -64,7 +64,6 @@ interface ServicesType {
   desc: string;
   serviceItems: {
     icon: string;
-    iconClassName: string;
     title: string;
     desc: string;
   }[];
