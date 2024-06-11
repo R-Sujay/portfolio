@@ -5,7 +5,6 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { Poppins } from "next/font/google";
 import { Children } from "@/typings";
 import { Toaster } from "react-hot-toast";
-import Loading from "@/components/Loading";
 
 export const metadata: Metadata = {
   title: "Sujay Rajesh",

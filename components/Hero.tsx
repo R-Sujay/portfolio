@@ -10,9 +10,7 @@ import { HeroType } from "@/typings";
 import { useSelectorHandler } from "@/hooks/useSelectorHandler";
 import { useScrollIntoViewHandler } from "@/hooks/useScrollIntoViewHandler";
 import Link from "next/link";
-import toast from "react-hot-toast";
-import { getCookie } from "cookies-next";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 import { themeAtom } from "@/atoms/Theme";
 
 interface Props {

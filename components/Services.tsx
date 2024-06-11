@@ -47,10 +47,12 @@ function Services({ services }: Props) {
           className="mx-auto mt-5 h-[400px] max-h-[250px] max-w-sm flex-1 rounded-3xl bg-white px-3 pb-5 pt-3 text-black shadow-md dark:bg-dark dark:text-white sm:mt-24 sm:max-w-max sm:px-3 sm:py-3 md:mt-28 md:max-h-[300px] lg:mt-0 xl:px-5 custombp:h-[60vh]"
         >
           <div className="h-[31%]">
-            <InlineSvgPreviewComponent
-              value={item.icon}
-              className={item.iconClassName}
-            />
+            {item.iconClassName && (
+              <InlineSvgPreviewComponent
+                value={item.icon}
+                className={item.iconClassName}
+              />
+            )}
           </div>
           <div className="px-3">
             <h1 className="font-code text-lg leading-6 tracking-wide text-black dark:text-white sm:w-[81%] sm:text-lg md:text-2xl lg:w-[89%] xl:w-full xl:text-[26px] xl:leading-8 xl:tracking-widest">
