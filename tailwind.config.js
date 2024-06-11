@@ -7,6 +7,7 @@ module.exports = {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
+  mode: "jit",
   theme: {
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
