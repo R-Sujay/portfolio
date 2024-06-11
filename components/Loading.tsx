@@ -2,7 +2,6 @@
 
 import React from "react";
 import CircleLoader from "./CircleLoader";
-// import { CircleLoader } from "react-awesome-loaders";
 
 function Loading() {
   return (
