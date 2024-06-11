@@ -1,9 +1,9 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { revalidatePath } from "next/cache";
+import { headers } from "next/headers";
 
-export async function GET({ url }: Request, res: Request) {
-  const { searchParams } = new URL(url);
-  const secret = searchParams.get("secret");
+export async function GET() {
+  const headersList = headers();
+  const secret = headersList.get("secret");
 
   if (secret !== process.env.WEBHOOK_TOKEN) {
     return new Response("Invalid token", {
