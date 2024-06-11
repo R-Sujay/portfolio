@@ -8,6 +8,8 @@ import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Sujay Rajesh",
+  description:
+    "I am a 9th-grade student looking to gain practical experience in software development. I am willing to work for free to achieve this goal. In addition to gaining experience, I also want to learn new programming languages and frameworks and contribute to meaningful projects.",
 };
 
 const poppins = Poppins({ weight: "400", subsets: ["latin"] });
