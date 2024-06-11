@@ -15,6 +15,7 @@ const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 export default async function RootLayout({ children }: Children) {
   return (
     <html lang="en">
+      <link rel="icon" href="/favicon.ico" sizes="any" />
       <body>
         <div>
           <Toaster />
