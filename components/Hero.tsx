@@ -34,7 +34,7 @@ function Hero({ hero }: Props) {
       ref={ref}
     >
       <div className="relative w-[90%] flex-col items-center justify-center text-center sm:w-auto lg:w-[45%] lg:pt-0 lg:text-left xl:w-[50%]">
-        <h1 className="text-2xl font-semibold text-darkGrey">Hi, I'm</h1>
+        <h1 className="text-2xl font-semibold text-darkGrey">Hi, I&apos;m</h1>
         {theme === "dark" ? (
           <motion.div
             className="App"

@@ -109,7 +109,7 @@ function Footer({ hero }: Props) {
           onSubmit={handleSubmit(submit)}
         >
           <h1 className="hidden text-center font-code text-3xl font-bold text-black dark:text-white md:block">
-            Let's Talk.
+            Let&apos;s Talk.
           </h1>
           <div className="flex h-16 space-x-3">
             <input
