@@ -58,13 +58,21 @@ function Profile({ services, desc }: Props) {
 
           <div className="profileIconContainer">
             {firstHalf.map((item) => (
-              <ProfileItem icon={item.icon} title={item.title} />
+              <ProfileItem
+                key={item.title}
+                icon={item.icon}
+                title={item.title}
+              />
             ))}
           </div>
 
           <div className="profileIconContainer mt-5 xl:ml-16">
             {secondHalf.map((item) => (
-              <ProfileItem icon={item.icon} title={item.title} />
+              <ProfileItem
+                key={item.title}
+                icon={item.icon}
+                title={item.title}
+              />
             ))}
           </div>
         </div>
