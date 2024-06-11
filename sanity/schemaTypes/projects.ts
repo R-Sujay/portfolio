@@ -42,6 +42,11 @@ export default defineType({
       of: [{ type: "reference", to: { type: "skills" } }],
     }),
     defineField({
+      name: "id",
+      title: "ID",
+      type: "number",
+    }),
+    defineField({
       name: "image",
       title: "Image",
       type: "image",

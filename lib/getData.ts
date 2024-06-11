@@ -52,14 +52,16 @@ async function getData() {
   );
 
   const projects: ProjectsType = await client.fetch(
-    `*[_type == "projects"] {
+    `*[_type == "projects"] | order(id asc) {
   title,
+  id,
   URL,
   bio,
   'tech': tech[]-> {
     title
   },
-  image
+  image,
+  isMobile
 }`,
   );
 

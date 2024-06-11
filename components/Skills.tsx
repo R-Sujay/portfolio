@@ -38,7 +38,7 @@ function Skills({ skills, desc }: Props) {
       id="skills"
       ref={ref}
     >
-      <div className="relative mb-10 flex items-center px-10 pr-2 lg:mb-0 lg:w-[30%]">
+      <div className="relative mb-10 mt-0 flex items-center justify-center px-10 pr-5 sm:mt-3 lg:mb-0 lg:w-[30%] xl:mt-0">
         <BarLoader className="hidden lg:block" />
         <div className="text-4xl font-bold">
           <h1 className="text-center text-black dark:text-white lg:text-left">

@@ -77,8 +77,9 @@ type SkillType = {
   dark: Image;
 }[];
 
-type ProjectsType = {
+type ProjectType = {
   title: string;
+  id: number;
   URL: string;
   bio: SanityBlock[];
   tech: {
@@ -91,7 +92,10 @@ type ProjectsType = {
       _type: "reference";
     };
   };
-}[];
+  isMobile: boolean;
+};
+
+type ProjectsType = ProjectType[];
 
 type SanityBlock = {
   _type: "block";

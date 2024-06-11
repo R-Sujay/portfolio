@@ -17,7 +17,7 @@ export async function onSubmitAction(data: FormData): Promise<FormState> {
       });
 
     return {
-      message: "Submitted the Form. I will get back to you as soon as possible",
+      message: "Form Submitted. I will get back to you as soon as possible!",
       status: 200,
       res,
     };
