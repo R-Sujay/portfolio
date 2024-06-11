@@ -67,7 +67,7 @@ function Footer({ hero }: Props) {
       <div className="mx-auto flex h-full w-full max-w-4xl flex-col items-center justify-between md:flex-row">
         <div className="flex flex-col justify-center space-y-2 text-center md:text-left">
           <h1 className="text-center font-code text-3xl font-bold text-black dark:text-white md:hidden">
-            Let's Talk.
+            Let&apos;s Talk.
           </h1>
           <div className="">
             <h1 className="footerHeader">Location</h1>
