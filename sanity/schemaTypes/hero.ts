@@ -44,14 +44,6 @@ export default defineType({
     }),
 
     defineField({
-      name: "dateOfBirth",
-      title: "Date of Birth",
-      type: "date",
-      validation: (rule) => rule.required(),
-    }),
-
-    // Field with accept option set to PDF
-    defineField({
       name: "resumePdf",
       title: "Resume PDF",
       type: "file",
@@ -70,22 +62,6 @@ export default defineType({
     defineField({
       name: "profile",
       title: "Profile",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: "alt",
-          type: "string",
-          title: "Alternative Text",
-        },
-      ],
-    }),
-
-    defineField({
-      name: "secProfile",
-      title: "Secondary Profile",
       type: "image",
       options: {
         hotspot: true,
