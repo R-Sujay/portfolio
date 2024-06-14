@@ -7,9 +7,15 @@ import Projects from "@/components/Projects";
 import Services from "@/components/Services";
 import Skills from "@/components/Skills";
 import getData from "@/lib/getData";
+import { Metadata } from "next";
+
+const { hero, skills, services, projects, profile } = await getData();
+
+export const metadata: Metadata = {
+  title: hero.desc,
+};
 
 export default async function Home() {
-  const { hero, skills, services, projects, profile } = await getData();
   const profileRes = await fetch(profile.desc, { cache: "force-cache" });
   const profileData = await profileRes.json();
   const profileDesc = JSON.stringify(profileData, null, "\t");

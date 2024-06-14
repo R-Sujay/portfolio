@@ -41,7 +41,7 @@ interface HeroType {
   name: string;
   profile: Image;
   location: string;
-  desc: SanityBlock[];
+  desc: string;
   tags: string[];
   email: string;
   dateOfBirth: string;
