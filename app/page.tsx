@@ -12,7 +12,7 @@ import { Metadata } from "next";
 const { hero, skills, services, projects, profile } = await getData();
 
 export const metadata: Metadata = {
-  title: hero.desc,
+  description: hero.desc,
 };
 
 export default async function Home() {
