@@ -30,6 +30,12 @@ export default defineType({
       title: "Message",
       type: "string",
     }),
+
+    defineField({
+      name: "time",
+      title: "Time",
+      type: "datetime",
+    }),
   ],
 
   preview: {

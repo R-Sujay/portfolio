@@ -10,6 +10,7 @@ export async function onSubmitAction(data: FormData): Promise<FormState> {
     const res = await client
       .create({
         _type: "contact",
+        time: new Date().toISOString(),
         ...data,
       })
       .then((res) => {

@@ -1,5 +1,5 @@
-import { BlockDefinition, Image } from "sanity";
-import { SanityDocument } from "next-sanity";
+import type { BlockDefinition, Image } from "sanity";
+import type { SanityDocument } from "next-sanity";
 
 interface Children {
   children: React.ReactNode;
@@ -20,6 +20,7 @@ type FormState = {
     email: FormDataEntryValue | null;
     subject: FormDataEntryValue | null;
     message: FormDataEntryValue | null;
+    time: string;
     _type: string;
   }>;
 };
