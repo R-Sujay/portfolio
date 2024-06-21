@@ -5,23 +5,19 @@ import {
   ProjectsType,
   ServicesType,
   ProfileType,
+  DetailsType,
 } from "@/typings";
 
 async function getData() {
   const hero: HeroType = await client.fetch(
     `*[_type == "hero"][0] {
   _id,
-  status,
   name,
   desc,
-  secProfile,
   profile,
-  location,
   skills,
   tags,
   "resumePdf": resumePdf.asset->url,
-  email,
-  linkedinURL
 }`,
   );
 
@@ -65,7 +61,15 @@ async function getData() {
 }`,
   );
 
-  return { hero, skills, services, projects, profile };
+  const details: DetailsType = await client.fetch(
+    `*[_type == "details"] | order(_createdAt asc) {
+  detailHeader,
+  detailItem,
+  isUrl
+}`,
+  );
+
+  return { hero, skills, services, projects, profile, details };
 }
 
 export default getData;

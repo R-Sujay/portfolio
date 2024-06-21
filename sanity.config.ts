@@ -45,6 +45,7 @@ export default defineConfig({
             S.documentTypeListItem("skills").title("Skills"),
             S.documentTypeListItem("projects").title("Projects"),
             S.documentTypeListItem("contact").title("Contact"),
+            S.documentTypeListItem("details").title("Details"),
           ]),
     }),
 

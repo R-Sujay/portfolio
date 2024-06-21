@@ -97,6 +97,12 @@ type ProjectType = {
 
 type ProjectsType = ProjectType[];
 
+type DetailsType = {
+  detailHeader: string;
+  detailItem: string;
+  isUrl: boolean;
+}[];
+
 type SanityBlock = {
   _type: "block";
   style: string;

@@ -1,6 +1,6 @@
 "use client";
 
-import { FormData, HeroType } from "@/typings";
+import { DetailsType, FormData, HeroType } from "@/typings";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -10,9 +10,10 @@ import { useRecoilValue } from "recoil";
 
 interface Props {
   hero: HeroType;
+  details: DetailsType;
 }
 
-function Footer({ hero }: Props) {
+function Footer({ hero, details }: Props) {
   const [loading, setLoading] = useState(false);
   const theme = useRecoilValue(themeAtom);
 
@@ -76,28 +77,23 @@ function Footer({ hero }: Props) {
           <h1 className="text-center font-code text-3xl font-bold text-black dark:text-white md:hidden">
             Let&apos;s Talk.
           </h1>
-          <div className="">
-            <h1 className="footerHeader">Location</h1>
-            <h1 className="footerStatus">{hero.location}</h1>
-          </div>
-          <div className="">
-            <h1 className="footerHeader">Email Address</h1>
-            <h1 className="footerStatus">{hero.email}</h1>
-          </div>
-          <div className="">
-            <h1 className="footerHeader">Status</h1>
-            <h1 className="footerStatus">{hero.status}</h1>
-          </div>
-          <div>
-            <h1 className="footerHeader">Linkedin</h1>
-            <Link
-              target="_blank"
-              href={hero.linkedinURL}
-              className="footerStatus underline md:text-sm lg:text-base"
-            >
-              {hero.linkedinURL}
-            </Link>
-          </div>
+
+          {details.map((detail) => (
+            <div className="">
+              <h1 className="footerHeader">{detail.detailHeader}</h1>
+              {detail.isUrl ? (
+                <Link
+                  target="_blank"
+                  href={detail.detailItem}
+                  className="footerStatus underline md:text-sm lg:text-base"
+                >
+                  {detail.detailItem}
+                </Link>
+              ) : (
+                <h1 className="footerStatus">{detail.detailItem}</h1>
+              )}
+            </div>
+          ))}
 
           <div className="hidden pt-5 md:block">
             <Link

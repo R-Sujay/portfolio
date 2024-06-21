@@ -9,7 +9,7 @@ import Skills from "@/components/Skills";
 import getData from "@/lib/getData";
 import { Metadata } from "next";
 
-const { hero, skills, services, projects, profile } = await getData();
+const { hero, skills, services, projects, profile, details } = await getData();
 
 export const metadata: Metadata = {
   description: hero.desc,
@@ -29,7 +29,7 @@ export default async function Home() {
       <Skills skills={skills} desc={hero.skills} />
       <Services services={services} />
       <Projects projects={projects} />
-      <Footer hero={hero} />
+      <Footer hero={hero} details={details} />
 
       <NextBtn />
     </main>

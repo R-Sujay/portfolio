@@ -13,12 +13,6 @@ export default defineType({
     }),
 
     defineField({
-      name: "status",
-      title: "Status",
-      type: "string",
-    }),
-
-    defineField({
       name: "desc",
       title: "Description",
       type: "string",
@@ -28,25 +22,6 @@ export default defineType({
       name: "skills",
       title: "Skills Description",
       type: "string",
-    }),
-
-    defineField({
-      name: "location",
-      title: "Location",
-      type: "string",
-    }),
-
-    defineField({
-      name: "email",
-      title: "Email Address",
-      type: "string",
-      validation: (rule) => rule.email(),
-    }),
-
-    defineField({
-      name: "linkedinURL",
-      title: "Linkedin URL",
-      type: "url",
     }),
 
     defineField({
