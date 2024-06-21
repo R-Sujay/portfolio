@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion } from "framer-motion";
 import { ProjectsType } from "@/typings";
 import { useSelectorHandler } from "@/hooks/useSelectorHandler";
 import ProjectMobile from "./ProjectMobile";

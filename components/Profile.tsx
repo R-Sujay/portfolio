@@ -8,7 +8,6 @@ import ProfileItem from "./ProfileIcon";
 import Editor from "@monaco-editor/react";
 import { useRecoilValue } from "recoil";
 import { themeAtom } from "@/atoms/Theme";
-import toast from "react-hot-toast";
 
 interface Props {
   services: Service;

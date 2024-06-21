@@ -1,7 +1,4 @@
 import React from "react";
-import { MdOutlineTimer } from "react-icons/md";
-import Svg from "@/public/Logo.svg";
-import Image from "next/image";
 import { InlineSvgPreviewComponent } from "@/sanity/lib/sanitySVGPlugin";
 
 function ProfileItem({ title, icon }: { title: string; icon: string }) {

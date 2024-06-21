@@ -17,10 +17,8 @@ export default async function RootLayout({ children }: Children) {
     <html lang="en">
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <body>
-        <div>
           <Toaster />
           <ThemeProvider>{children}</ThemeProvider>
-        </div>
       </body>
     </html>
   );

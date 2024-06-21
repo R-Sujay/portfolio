@@ -1,15 +1,8 @@
 "use client";
 
 import React, { useRef } from "react";
-import { useInView, motion } from "framer-motion";
-import {
-  MdDashboard,
-  MdDashboardCustomize,
-  MdDevices,
-  MdPhonelink,
-} from "react-icons/md";
-import { HiSquaresPlus } from "react-icons/hi2";
-import { RiDashboardHorizontalFill } from "react-icons/ri";
+import { motion } from "framer-motion";
+import { MdDashboard, MdDashboardCustomize } from "react-icons/md";
 import { ServicesType } from "@/typings";
 import "ldrs/lineWobble";
 import BarLoader from "./BarLoader";

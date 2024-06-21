@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import React, { useRef, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
+import React, { useRef } from "react";
+import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import AnimateText from "@/components/AnimateText";
 import { urlForImage } from "@/sanity/lib/asset";

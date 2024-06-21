@@ -1,10 +1,10 @@
 "use client";
 
 import { onSubmitAction } from "@/utils/formAction";
-import { FormState, FormData, HeroType } from "@/typings";
+import { FormData, HeroType } from "@/typings";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { themeAtom } from "@/atoms/Theme";
 import { useRecoilValue } from "recoil";
@@ -43,17 +43,25 @@ function Footer({ hero }: Props) {
       },
     });
 
-    const submit = await onSubmitAction(data).then((res) => {
-      if (res.status === 200) {
-        toast.success(res.message, {
-          id: loginToast,
-        });
-      } else {
-        toast.error(res.message, {
-          id: loginToast,
-        });
-      }
+    const mutate = await fetch("/api/mutate-contact", {
+      method: "POST",
+      body: JSON.stringify(data),
     });
+
+    if (mutate.ok) {
+      toast.success(
+        await mutate.json().then((res) => {
+          return res.text;
+        }),
+        {
+          id: loginToast,
+        },
+      );
+    } else {
+      toast.error(await mutate.text(), {
+        id: loginToast,
+      });
+    }
 
     reset();
     setLoading(false);
