@@ -78,8 +78,8 @@ function Footer({ hero, details }: Props) {
             Let&apos;s Talk.
           </h1>
 
-          {details.map((detail) => (
-            <div className="">
+          {details.map((detail, i) => (
+            <div key={i}>
               <h1 className="footerHeader">{detail.detailHeader}</h1>
               {detail.isUrl ? (
                 <Link
