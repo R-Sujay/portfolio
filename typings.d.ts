@@ -37,7 +37,6 @@ interface HeroType {
   _id: string;
   status: string;
   secProfile: Image;
-  resumePdf: string;
   skills: string;
   name: string;
   profile: Image;
@@ -48,6 +47,8 @@ interface HeroType {
   dateOfBirth: string;
   linkedinURL: string;
 }
+
+type ResumeType = { url: string };
 
 type Service = {
   icon: string;

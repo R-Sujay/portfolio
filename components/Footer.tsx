@@ -9,11 +9,10 @@ import { themeAtom } from "@/atoms/Theme";
 import { useRecoilValue } from "recoil";
 
 interface Props {
-  hero: HeroType;
   details: DetailsType;
 }
 
-function Footer({ hero, details }: Props) {
+function Footer({ details }: Props) {
   const [loading, setLoading] = useState(false);
   const theme = useRecoilValue(themeAtom);
 
@@ -97,7 +96,7 @@ function Footer({ hero, details }: Props) {
 
           <div className="hidden pt-5 md:block">
             <Link
-              href={hero.resumePdf}
+              href="/resume"
               target="_blank"
               className="slide-btn group flex h-14 w-3/4 max-w-52 items-center justify-center rounded-xl text-xl font-semibold"
             >
@@ -159,7 +158,7 @@ function Footer({ hero, details }: Props) {
               Submit
             </button>
             <Link
-              href={hero.resumePdf}
+              href="/resume"
               target="_blank"
               className="w-1/2 rounded-2xl border border-black py-3 text-center text-xl font-semibold dark:border-white dark:text-white md:hidden"
             >

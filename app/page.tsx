@@ -29,7 +29,7 @@ export default async function Home() {
       <Skills skills={skills} desc={hero.skills} />
       <Services services={services} />
       <Projects projects={projects} />
-      <Footer hero={hero} details={details} />
+      <Footer details={details} />
 
       <NextBtn />
     </main>

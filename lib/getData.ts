@@ -6,6 +6,7 @@ import {
   ServicesType,
   ProfileType,
   DetailsType,
+  ResumeType,
 } from "@/typings";
 
 async function getData() {
@@ -17,7 +18,6 @@ async function getData() {
   profile,
   skills,
   tags,
-  "resumePdf": resumePdf.asset->url,
 }`,
   );
 
@@ -69,7 +69,13 @@ async function getData() {
 }`,
   );
 
-  return { hero, skills, services, projects, profile, details };
+  const resume: ResumeType = await client.fetch(
+    `*[_type == "hero"][0] {
+  "url": resumePdf.asset->url,
+}`,
+  );
+
+  return { hero, skills, services, projects, profile, details, resume };
 }
 
 export default getData;

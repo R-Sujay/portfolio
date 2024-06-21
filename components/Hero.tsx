@@ -94,7 +94,7 @@ function Hero({ hero }: Props) {
             View Profile
           </button>
           <Link
-            href={hero.resumePdf}
+            href="/resume"
             target="_blank"
             className="slide-btn group flex h-11 flex-1 items-center justify-center rounded-2xl text-sm font-semibold sm:h-14"
           >
