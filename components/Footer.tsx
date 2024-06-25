@@ -69,7 +69,7 @@ function Footer({ details }: Props) {
   return (
     <div
       id="footer"
-      className="container mt-0 !h-max max-h-none max-w-full snap-none bg-gray-100 px-2 dark:bg-secondary md:px-5"
+      className="container mt-0 !h-max max-h-none max-w-full snap-none bg-gray-50 px-2 dark:bg-secondary md:px-5"
     >
       <div className="mx-auto flex h-full w-full max-w-4xl flex-col items-center justify-between md:flex-row">
         <div className="flex flex-col justify-center space-y-2 text-center md:text-left">
