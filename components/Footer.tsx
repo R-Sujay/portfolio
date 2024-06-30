@@ -160,7 +160,7 @@ function Footer({ details }: Props) {
             <Link
               href="/resume"
               target="_blank"
-              className="w-1/2 rounded-2xl border border-black py-3 text-center text-xl font-semibold dark:border-white dark:text-white md:hidden"
+              className="w-1/2 rounded-2xl border border-black py-3 text-center text-xl font-semibold dark:border-darkGrey dark:text-darkGrey md:hidden"
             >
               View Resume
             </Link>
