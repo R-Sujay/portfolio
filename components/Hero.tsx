@@ -12,6 +12,7 @@ import { useScrollIntoViewHandler } from "@/hooks/useScrollIntoViewHandler";
 import Link from "next/link";
 import { useRecoilValue } from "recoil";
 import { themeAtom } from "@/atoms/Theme";
+import { FaGithub } from "react-icons/fa";
 
 interface Props {
   hero: HeroType;
@@ -94,11 +95,12 @@ function Hero({ hero }: Props) {
             View Profile
           </button>
           <Link
-            href="/resume"
+            href="https://github.com/R-Sujay"
             target="_blank"
-            className="slide-btn group flex h-11 flex-1 items-center justify-center rounded-2xl text-sm font-semibold sm:h-14"
+            className="slide-btn text-md group flex h-11 flex-1 items-center justify-center rounded-2xl font-semibold sm:h-14"
           >
-            View Resume
+            <FaGithub className="mr-1" />
+            Github
             <span className="slide-main" />
           </Link>
         </div>

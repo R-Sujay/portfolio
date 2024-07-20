@@ -24,11 +24,11 @@ function HeaderItem({ item }: Props) {
       className="relative flex flex-shrink-0 cursor-pointer items-center justify-center rounded-3xl px-0.5 lg:mx-0 lg:h-14 lg:px-2"
       onClick={() => selectItem(item.text, item.id)}
     >
-      <h1
+      <h3
         className={`z-50 text-lg font-semibold text-black transition-colors dark:text-white`}
       >
         {item.text}
-      </h1>
+      </h3>
       {selected === item.id && (
         <motion.div
           layoutId="outline"
