@@ -85,7 +85,7 @@ function Footer({ details }: Props) {
                   <Link
                     target="_blank"
                     href={detail.detailItem}
-                    className="absolute h-full w-full bg-white/50"
+                    className="absolute h-full w-full"
                   ></Link>
                   <span className="px-5">{detail.detailItem}</span>
                 </p>
