@@ -81,13 +81,13 @@ function Footer({ details }: Props) {
             <div key={i}>
               <h1 className="footerHeader">{detail.detailHeader}</h1>
               {detail.isUrl ? (
-                <p className="footerStatus relative !max-w-[100vw] !truncate underline md:px-0 md:text-sm lg:text-base">
+                <p className="footerStatus relative !max-w-[100vw] !truncate underline md:text-sm lg:text-base">
                   <Link
                     target="_blank"
                     href={detail.detailItem}
                     className="absolute h-full w-full"
                   ></Link>
-                  <span className="px-5">{detail.detailItem}</span>
+                  <span className="px-5 md:px-0">{detail.detailItem}</span>
                 </p>
               ) : (
                 <h1 className="footerStatus">{detail.detailItem}</h1>
