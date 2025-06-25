@@ -51,7 +51,12 @@ function Skills({ skills, desc }: Props) {
 
       <div className="relative h-[100%] w-full flex-col justify-start space-y-10 overflow-hidden sm:space-y-2 md:space-y-8 lg:h-auto lg:w-[70%] lg:space-y-10 lg:pb-0">
         {skillArr.map((arr, i) => (
-          <Marquee speed={100} gradient={false} key={i}>
+          <Marquee
+            speed={100}
+            direction={i === 1 ? "left" : "right"}
+            gradient={false}
+            key={i}
+          >
             {arr.map((skill) => (
               <div
                 className={`relative mx-5 flex h-16 w-[30vw] items-center justify-center sm:h-36 sm:w-[25vw] md:h-28 md:w-[18vw] lg:h-[20vh] lg:w-[15vw]`}

@@ -105,12 +105,12 @@ function Hero({ hero }: Props) {
       </div>
 
       <div className="relative mt-20 items-center justify-center sm:w-full sm:max-w-lg lg:mt-0 lg:w-[60%] lg:max-w-none xl:flex-1">
-        <div className="relative flex items-center justify-center lg:ml-[30%]">
-          <div className="relative h-[230px] w-[230px] rounded-full shadow-2xl sm:h-[300px] sm:w-[300px] sm:animate-heroImage lg:h-[400px] lg:w-[400px]">
+        <div className="relative flex items-center justify-center lg:ml-[21%]">
+          <div className="relative h-[230px] w-[230px] rounded-full shadow-2xl sm:h-[300px] sm:w-[300px]  sm:animate-heroImage lg:h-[400px] lg:w-[400px] ">
             <Image
               src={urlForImage(hero.profile)}
               fill={true}
-              className="rounded-full object-cover"
+              className="rounded-full object-cover opacity-85"
               priority={true}
               fetchPriority="high"
               alt={hero.name}
