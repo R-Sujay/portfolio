@@ -25,9 +25,9 @@ function ThemeSwitch({ className }: { className: string }) {
   return (
     <button className={className} onClick={() => setTheme()}>
       {typeof window !== "undefined" && theme === "dark" ? (
-        <BsMoonStarsFill className="h-6 w-6 text-black dark:text-white" />
-      ) : (
         <BsFillSunFill className="h-8 w-8 text-black dark:text-white" />
+      ) : (
+        <BsMoonStarsFill className="h-6 w-6 text-black dark:text-white" />
       )}
     </button>
   );

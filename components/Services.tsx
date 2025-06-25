@@ -18,54 +18,6 @@ function Services({ services }: Props) {
 
   useSelectorHandler(ref, 3);
 
-  const data = [
-    {
-      Icon: (
-        // <svg
-        //   stroke="currentColor"
-        //   fill="currentColor"
-        //   className="h-[66px] w-[73px] sm:mb-10 md:h-[80px] md:w-[87px]"
-        //   stroke-width="0"
-        //   viewBox="0 0 24 24"
-        //   xmlns="http://www.w3.org/2000/svg"
-        // >
-        //   <rect x="0" y="0" width="12" height="24" fill="none"></rect>
-        //   <path fill="none" d="M0 0h24v24H0z"></path>
-        //   <path d="M4 6h18V4H4c-1.1 0-2 .9-2 2v11H0v3h14v-3H4V6zm19 2h-6c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1zm-1 9h-4v-7h4v7z"></path>
-        // </svg>
-
-        <MdDashboardCustomize className="h-[66px] w-[73px] sm:mb-10 md:h-[80px] md:w-[100px]" />
-      ),
-      title: "Mobile App Design",
-      desc: "dsdsds",
-    },
-    {
-      Icon: (
-        <svg
-          stroke="currentColor"
-          fill="currentColor"
-          stroke-width="0"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g transform="translate(3 0)">
-            <path fill="none" d="M0 0h24v24H0z"></path>
-            <path d="M4 6h18V4H4c-1.1 0-2 .9-2 2v11H0v3h14v-3H4V6zm19 2h-6c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1zm-1 9h-4v-7h4v7z"></path>
-          </g>
-        </svg>
-      ),
-      title: "Responsive Web Website",
-      desc: "sdsd",
-    },
-    {
-      Icon: (
-        <MdDashboard className="h-[66px] w-[73px] sm:mb-10 md:h-[80px] md:w-[100px]" />
-      ),
-      title: "Dashboard Design",
-      desc: "sdsd",
-    },
-  ];
-
   return (
     <motion.div
       className="container relative flex flex-col items-center justify-between space-x-3 bg-gray-100/60 px-0 pb-14 pr-3 dark:bg-secondary sm:flex-row md:space-x-5 md:pr-5 lg:space-x-4 lg:pb-0 lg:pr-4 xl:space-x-5 xl:pr-5"
@@ -77,7 +29,6 @@ function Services({ services }: Props) {
 
         <BarLoader className="mb-10 hidden w-16 lg:block xl:mb-0 xl:w-auto" />
         <div className="mx-auto text-center lg:text-left">
-          {/* <h1 className="text-3xl font-bold text-gray-500 md:text-4xl"> */}
           <h1 className="text-3xl font-bold text-gray-500 dark:text-darkGrey md:text-4xl lg:text-3xl xl:text-4xl">
             Top <span className="text-black dark:text-white">Services</span>
           </h1>

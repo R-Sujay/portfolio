@@ -69,7 +69,7 @@ function Footer({ details }: Props) {
   return (
     <div
       id="footer"
-      className="container mt-0 !h-max max-h-none max-w-full snap-none bg-gray-100 px-2 dark:bg-secondary md:px-5"
+      className="container mt-0 !h-max max-h-none max-w-full snap-none bg-gray-50 px-2 dark:bg-secondary md:px-5"
     >
       <div className="mx-auto flex h-full w-full max-w-4xl flex-col items-center justify-between md:flex-row">
         <div className="flex flex-col justify-center space-y-2 text-center md:text-left">
@@ -81,13 +81,14 @@ function Footer({ details }: Props) {
             <div key={i}>
               <h1 className="footerHeader">{detail.detailHeader}</h1>
               {detail.isUrl ? (
-                <Link
-                  target="_blank"
-                  href={detail.detailItem}
-                  className="footerStatus underline md:text-sm lg:text-base"
-                >
-                  {detail.detailItem}
-                </Link>
+                <p className="footerStatus relative !max-w-[100vw] !truncate underline md:text-sm lg:text-base">
+                  <Link
+                    target="_blank"
+                    href={detail.detailItem}
+                    className="absolute h-full w-full"
+                  ></Link>
+                  <span className="px-5 md:px-0">{detail.detailItem}</span>
+                </p>
               ) : (
                 <h1 className="footerStatus">{detail.detailItem}</h1>
               )}
@@ -160,7 +161,7 @@ function Footer({ details }: Props) {
             <Link
               href="/resume"
               target="_blank"
-              className="w-1/2 rounded-2xl border border-black py-3 text-center text-xl font-semibold dark:border-white dark:text-white md:hidden"
+              className="w-1/2 rounded-2xl border border-black py-3 text-center text-xl font-semibold dark:border-darkGrey dark:text-darkGrey md:hidden"
             >
               View Resume
             </Link>
