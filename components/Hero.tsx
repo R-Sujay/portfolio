@@ -112,7 +112,7 @@ function Hero({ hero }: Props) {
             <Image
               src={urlForImage(hero.profile)}
               fill={true}
-              className="rounded-full object-cover opacity-85"
+              className="rounded-full object-cover dark:opacity-85"
               priority={true}
               fetchPriority="high"
               alt={hero.name}
