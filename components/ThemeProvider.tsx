@@ -15,7 +15,7 @@ function Provider({ children }: Children) {
     setIsClient(true);
   }, []);
 
-  return !isClient ? (
+  return isClient ? (
     <div className={theme === "dark" ? "dark" : ""}>{children}</div>
   ) : (
     <Loading />
