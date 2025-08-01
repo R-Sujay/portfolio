@@ -1,38 +1,30 @@
 "use client";
 
 import items from "@/HeaderItemsData";
-import { useScrollIntoViewHandler } from "@/hooks/useScrollIntoViewHandler";
 import Link from "next/link";
 import React, { useState } from "react";
-import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 import ThemeSwitch from "./ThemeSwitch";
 
 function HeaderButton() {
-  const { selectItem } = useScrollIntoViewHandler();
   const [isVisible, setIsVisible] = useState(false);
 
   return (
     <div className="z-50 md:hidden">
-      {/* {theme === "light" ? (
-        <BsFillSunFill className="h-8 w-8 text-indigo-600" />
-      ) : (
-        <BsMoonStarsFill className="h-6 w-6 text-indigo-600" />
-      )} */}
       <div
         className={`absolute left-0 top-[12vh] ${isVisible ? "inline-flex" : "hidden"} w-screen flex-col items-center justify-start rounded-b-3xl bg-white pb-4 shadow-2xl dark:bg-dark`}
       >
         {items.map((item) => (
-          <p
+          <Link
+            href={`#${item.text.toLowerCase()}`}
             onClick={() => {
-              selectItem(item.text, item.id);
               setIsVisible(false);
             }}
             className="w-full py-1 text-center text-lg font-semibold dark:text-darkGrey"
             key={item.id}
           >
             {item.text}
-          </p>
+          </Link>
         ))}
         <div className="z-50 mt-2 flex items-center space-x-5">
           <Link

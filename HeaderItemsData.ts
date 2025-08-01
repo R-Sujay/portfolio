@@ -10,4 +10,5 @@ const items: item[] = [
   { text: "Services", id: 3 },
   { text: "Projects", id: 4 },
 ];
+
 export default items;

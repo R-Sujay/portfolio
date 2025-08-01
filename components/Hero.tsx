@@ -88,12 +88,12 @@ function Hero({ hero }: Props) {
         </p>
 
         <div className="mx-auto flex w-[90vw] max-w-72 space-x-3 sm:w-[80%] sm:max-w-none lg:mx-0 lg:mt-3 lg:w-[60%] xl:w-[55%] xl:space-x-5">
-          <button
-            onClick={() => selectItem("profile", 1)}
-            className="h-11 flex-1 rounded-2xl bg-black text-sm font-semibold text-white dark:bg-secondary dark:text-white sm:h-auto"
+          <Link
+            href="#profile"
+            className="flex h-11 flex-1 items-center justify-center rounded-2xl bg-black text-sm font-semibold text-white dark:bg-secondary dark:text-white sm:h-auto"
           >
             View Profile
-          </button>
+          </Link>
           <Link
             href="https://github.com/R-Sujay"
             target="_blank"
